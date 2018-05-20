@@ -1,0 +1,13 @@
+import { Case } from './Case';
+import { Monitor } from "./Monitor";
+import { Motherboard } from "./Motherboard";
+import { Dimensions } from "./Dimensions";
+import { Resolution } from "./resolution";
+import { PC } from "./PC";
+let dimension: Dimensions = new Dimensions(15,12,1);
+let theCase: Case = new Case("HP Pavillion","HP","Battery",dimension);
+let monitor: Monitor =  new Monitor("4K","HP",1366,new Resolution(1366,768));
+let motherboard: Motherboard = new Motherboard("Ultimate Motherboard","13-12",4,"HP","v2.45",4);
+let pc: PC = new PC(theCase,monitor,motherboard);
+console.log(`RAM slots: ${pc.motherboard.RAMSlots}`);
+console.log(`Computer model: ${pc.theCase.model}`);

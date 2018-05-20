@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Modal p2</title>
+    <style media="screen">
+    .modal{
+      display: none;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      -webkit-animation-name: fadeIn; /* Fade in the background */
+      -webkit-animation-duration: 0.4s;
+      animation-name: fadeIn;
+      animation-duration: 0.4s;
+    }
+      @-webkit-keyframes slideIn {
+          from {top: -300px; opacity: 0}
+          to {top: 80px; opacity: 1}
+      }
+
+      @keyframes slideIn {
+          from {top: -300px; opacity: 0}
+          to {top: 80px; opacity: 1}
+      }
+      @-webkit-keyframes slideOut {
+        from {top: 80px; opacity: 1}
+        to {top: -300px; opacity: 0}
+      }
+
+      @keyframes slideOut {
+          from {top: 80px; opacity: 1}
+          to {top: -300px; opacity: 0}
+      }
+      .modal-content{
+        background-color:none;
+        margin-left:35%;
+        position:fixed;
+        width:400px;
+        top:80px;
+        animation-name:slideIn;
+        animation-duration:1s;
+      }
+      .modal-header{
+        padding:12px 8px 12px 40px;
+        background-color:blue;
+        width:100%;
+        color:white;
+      }
+    .modal-footer{
+      padding:12px 8px 12px 40px;
+      background-color:blue;
+      width:100%;
+      color:white;
+    }
+    .modal-body{
+      width:100%;
+      padding:12px 8px 12px 40px;
+      overflow:auto;
+      height:200px;
+      background-color:white;
+    }
+    .closeb{
+      float:right;
+      margin-right:10px;
+      font-weight:bold;
+    }
+    .closeb:hover{
+      color:grey;
+      cursor:pointer;
+    }
+    .modal-body::-webkit-scrollbar {
+        width: 10px;
+        background-color:#7583;
+        cursor:pointer;
+    }
+    .modal-body::-webkit-scrollbar-thumb {
+        background-color:grey;
+        cursor:pointer;
+    }
+    .modal-body::-webkit-scrollbar-thumb:hover{
+        background-color: black;
+        cursor:crosshair;
+    }
+    .modal-body::-webkit-scrollbar-track {
+        background-color:darkgrey;
+        cursor:pointer;
+    }
+    .success {background-color: #4CAF50;}
+    .info {background-color: #2196F3;}
+    .warning {background-color: #ff9800;}
+    .primary {background-color: blue;}
+    </style>
+  </head>
+  <body>
+    <button id="launcher">Launch modal</button>
+    <button id="launcher2">Launch pop up</button>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="closeb">&times;</span>
+          <h1>Modal</h1>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="modal-footer">
+          <p>&copy; 2017 Sharan Sajiv Menon</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header warning" >
+          <span class="closeb">&times;</span>
+          <h1>Warning!</h1>
+        </div>
+        <div class="modal-body" style="height:100px;">
+          <p>Your credit card has expired</p>
+          <p>Thank you for your time</p>
+        </div>
+        <div class="modal-footer warning">
+          <p>&copy;2017 Sharan Sajiv Menon</p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      //Modal 1
+      var button = document.getElementById('launcher');
+      var modal = document.getElementsByClassName('modal')[0];
+      var closeb = document.getElementsByClassName('closeb')[0];
+      button.onclick = function(){
+        var modalcontent = document.getElementsByClassName('modal-content')[0];
+        modalcontent.style.webkitAnimationName = "slideIn";
+        modal.style.display  ="block";
+        modalcontent.style.top = "80px";
+      }
+      closeb.onclick = function(){
+        var modalcontent = document.getElementsByClassName('modal-content')[0];
+        modalcontent.style.webkitAnimationName = "slideOut";
+        setTimeout(function(){
+          modal.style.display  ="none";
+        },250)
+        modal.style.display  ="block";
+        modalcontent.style.top = "-450px";
+      }
+      window.onclick = function(event){
+        if(event.target == modal){
+          var modalcontent = document.getElementsByClassName('modal-content')[0];
+          modalcontent.style.webkitAnimationName = "slideOut";
+          setTimeout(function(){
+            modal.style.display  ="none";
+          },250)
+          modal.style.display  ="block";
+          modalcontent.style.top = "-450px";
+        }
+        if(event.target == modal2){
+          modalcontent2.style.webkitAnimationName = "none";
+          modal2.style.display  ="none";
+        }
+      }
+      //Modal 2
+      var button2 = document.getElementById('launcher2');
+      var modal2 = document.getElementsByClassName('modal')[1];
+      var closeb2 = document.getElementsByClassName('closeb')[1];
+      var modalcontent2 = document.getElementsByClassName('modal-content')[1];
+      button2.onclick = function(){
+        modalcontent2.style.webkitAnimationName = "none";
+        modal2.style.display  ="block";
+      }
+      closeb2.onclick = function(){
+        modalcontent2.style.webkitAnimationName = "none";
+        modal2.style.display  ="none";
+      }
+    </script>
+  </body>
+</html>

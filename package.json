@@ -1,0 +1,29 @@
+{
+  "name": "programming",
+  "version": "1.0.0",
+  "description": "Programming by Sharan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharanSMenon/Programming-Folder.git"
+  },
+  "author": "Sharan Sajiv Menon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SharanSMenon/Programming-Folder/issues"
+  },
+  "homepage": "https://github.com/SharanSMenon/Programming-Folder#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "d3": "^5.4.0",
+    "express": "^4.16.3",
+    "lodash": "^4.17.5",
+    "plotly": "^1.0.6",
+    "plotly.js": "^1.35.2",
+    "readline-sync": "^1.4.9",
+    "request": "^2.85.0"
+  }
+}

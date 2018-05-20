@@ -1,0 +1,30 @@
+
+.filterList li{
+    border: 1px solid #ddd;
+    padding:12px 20px 12px 40px;
+    list-style: none;
+    background-color: white;
+}
+.filterList li:hover{
+    background-color: darkgray;
+}
+.filterList li:nth-child(odd){
+    background-color: #eee;
+}
+.filterList li:nth-child(odd):hover{
+    background-color: darkgray;
+}
+.filterList{
+    padding: 0;
+    margin: 0;
+}
+.filterInp{
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tabs</title>
+    <style media="screen">
+      .tab-header{
+        width:400px;
+        height:60px;
+        padding:0px;
+        background-color:#eee;
+        border-bottom:1px solid grey;
+
+      }
+      .tab-header button{
+        height:100%;
+        margin-right:0px;
+        width:50px;
+        border:none;
+        cursor:pointer;
+        float:left;
+        outline:none;
+        transition:0.2s;
+      }
+      .tab-header button:hover{
+        height:100%;
+        margin-right:0px;
+        width:50px;
+        border:none;
+        background-color:lightgrey;
+      }
+      .tabcontent{
+        width:372px;
+        overflow: auto;
+        padding:6px 8px 6px 20px;
+        background-color:#eee;
+        height:200px;
+        display:none;
+      }
+      .active{
+        background-color:grey;
+        color:white;
+      }
+      .tabcontent::-webkit-scrollbar {
+          width:10px;
+          background-color:#7583;
+          cursor:pointer;
+      }
+      .tabcontent::-webkit-scrollbar-thumb {
+          background-color:grey;
+          cursor:pointer;
+      }
+      .tabcontent::-webkit-scrollbar-thumb:hover{
+          background-color: black;
+          cursor:crosshair;
+      }
+      .tabcontent::-webkit-scrollbar-track {
+          background-color:darkgrey;
+          cursor:pointer;
+      }
+      .close{
+        float:right;
+        font-weight:bold;
+        color:black;
+        cursor:pointer;
+        font-family: cursive;
+        transition:0.3s;
+      }
+      .close:hover{
+        color:white;
+      }
+      .closeb{
+        float:right;
+        font-weight:bold;
+        color:white;
+        cursor:pointer;
+        font-family: cursive;
+        transition:0.3s;
+      }
+      .closeb:hover{
+        color:black;
+      }
+      .modal{
+        display: none;
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      .modal-content{
+        background-color:white;
+        margin-left:450px;
+        width:500px;
+        position:fixed;
+        top:80px;
+        height:400px;
+        animation-name:slideIn;
+        animation-duration:0.4s;
+        -webkit-animation-name:slideIn;
+        -webkit-animation-duration:0.4s;
+      }
+      .modal-header{
+        background-color:grey;
+        color:white;
+        width:472px;
+        padding:12px 12px 12px 20px;
+      }
+      .modal-footer{
+        background-color:grey;
+        color:white;
+        width:476px;
+        padding:12px 8px 12px 20px;
+      }
+      .modal-body{
+        background-color:#eee;
+        color:black;
+        width:476px;
+        padding:12px 8px 12px 20px;
+        height:200px;
+        overflow:auto;
+      }
+      @-webkit-keyframes slideIn {
+          from {top: -300px; opacity: 0}
+          to {top: 80px; opacity: 1}
+      }
+
+      @keyframes slideIn {
+          from {top: -300px; opacity: 0}
+          to {top: 80px; opacity: 1}
+      }
+      @-webkit-keyframes slideOut {
+        from {top: 80px; opacity: 1}
+        to {top: -300px; opacity: 0}
+      }
+
+      @keyframes slideOut {
+          from {top: 80px; opacity: 1}
+          to {top: -300px; opacity: 0}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="closeb">&times;</span>
+          <h1 id="header">Hello</h1>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="modal-footer">
+          <p>&copy; 2017 Sharan Sajiv Menon.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-header">
+      <button type="button" name="button" class="tablink" onclick="Open(event,1)">1</button>
+      <button type="button" name="button" class="tablink" onclick="Open(event,2)">2</button>
+      <button type="button" name="button" class="tablink" onclick="Open(event,3)">3</button>
+      <button type="button" name="button" class="tablink" onclick="Open(event,4)">4</button>
+      <button type="button" name="button" class="tablink" onclick="Open(event,5)">5</button>
+      <button type="button" name="button" class="tablink" onclick="Open(event,6)">6</button>
+      <button type="button" name="button" class="tablink" onclick="Open(event,7)">7</button>
+      <button type="button" name="button" class="tablink" onclick="Open(event,8)">8</button>
+    </div>
+    <div class="tabcontent" id="1">
+      <span class="close">&times;</span>
+      <h1 class="h">1</h1>
+      <button type="button" onclick="modalOpen(1)" class="butt">Launch</button><br>
+      <p class="pp"> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venifugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="tabcontent" id="2">
+      <span class="close">&times;</span>
+      <h1 class="h">2</h1>
+      <button type="button" onclick="modalOpen(2)" class="butt">Launch</button><br>
+      <p class="pp">dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="tabcontent" id="3">
+      <span class="close">&times;</span>
+      <h1 class="h">3</h1>
+      <button type="button" onclick="modalOpen(3)" class="butt">Launch</button><br>
+      <p class="pp">sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="tabcontent" id="4">
+      <span class="close">&times;</span>
+      <h1 class="h">4</h1>
+      <button type="button" onclick="modalOpen(4)" class="butt">Launch</button><br>
+      <p class="pp">amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="tabcontent" id="5">
+      <span class="close">&times;</span>
+      <h1 class="h">5</h1>
+      <button type="button" onclick="modalOpen(5)" class="butt">Launch</button><br>
+      <p class="pp"> consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="tabcontent" id="6">
+      <span class="close">&times;</span>
+      <h1 class="h">6</h1>
+      <button type="button" onclick="modalOpen(6)" class="butt">Launch</button><br>
+      <p class="pp"> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="tabcontent" id="7">
+      <span class="close">&times;</span>
+      <h1 class="h">7</h1>
+      <button type="button" onclick="modalOpen(7)" class="butt">Launch</button><br>
+      <p class="pp"> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="tabcontent" id="8">
+      <span class="close">&times;</span>
+      <h1 class="h">8</h1>
+      <button type="button" onclick="modalOpen(8)" class="butt">Launch</button><br>
+      <p class="pp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <br>
+    <script type="text/javascript">
+      //Modal
+      var modal = document.getElementsByClassName('modal')[0];
+      var modalcontent = document.getElementsByClassName('modal-content')[0];
+      var modalbody = document.getElementsByClassName('modal-body')[0];
+      var modalheader = document.getElementById('header');
+      var close1 = document.getElementsByClassName('closeb')[0];
+      var butt = document.getElementsByClassName('butt');
+      var tabcontent = document.getElementsByClassName('tabcontent');
+      var h = document.getElementsByClassName('h');
+      var p = document.getElementsByClassName('pp');
+      function modalOpen(number){
+        modalcontent.style.webkitAnimationName = "slideIn";
+        modal.style.display  ="block";
+        modalcontent.style.top = "80px";
+        modalheader.innerHTML = h[number-1].innerHTML;
+        modalbody.innerHTML = p[number-1].innerHTML;
+      }
+      close1.onclick = function(){
+        modalcontent.style.webkitAnimationName = "slideOut";
+        setTimeout(function(){
+          modal.style.display  ="none";
+        },250)
+        modal.style.display  ="block";
+        modalcontent.style.top = "-450px";
+      }
+      window.onclick = function(event){
+        if (event.target == modal) {
+          modalcontent.style.webkitAnimationName = "slideOut";
+          setTimeout(function(){
+            modal.style.display  ="none";
+          },250)
+          modal.style.display  ="block";
+          modalcontent.style.top = "-450px";
+        }
+      }
+      //Tabs
+      function Open(event,idn) {
+        var tablink = document.getElementsByClassName('tablink');
+        for (var i = 0; i < tablink.length; i++) {
+          tablink[i].className = tablink[i].className.replace(" active", "");
+        }
+        var tabcontent = document.getElementsByClassName('tabcontent');
+        for (var i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display="none";
+        }
+        tablink[idn-1].className += " active";
+        tabcontent[idn-1].style.display="block";
+      }
+      document.addEventListener("keypress",function(key) {
+        if(key.key<= 8){
+          Open(event,key.key);
+        }
+      })
+      var tabcontent = document.getElementsByClassName('tabcontent');
+      var close = document.getElementsByClassName('close');
+      var tablink = document.getElementsByClassName('tablink');
+      for (var i = 0; i < close.length; i++) {
+        close[i].onclick = function(event){
+          for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display="none";
+            tablink[i].className = tablink[i].className.replace(" active", "");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

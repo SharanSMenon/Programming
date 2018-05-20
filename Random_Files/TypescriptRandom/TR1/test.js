@@ -1,0 +1,15 @@
+"use strict";
+exports.__esModule = true;
+var Case_1 = require("./Case");
+var Monitor_1 = require("./Monitor");
+var Motherboard_1 = require("./Motherboard");
+var Dimensions_1 = require("./Dimensions");
+var resolution_1 = require("./resolution");
+var PC_1 = require("./PC");
+var dimension = new Dimensions_1.Dimensions(15, 12, 1);
+var theCase = new Case_1.Case("HP Pavillion", "HP", "Battery", dimension);
+var monitor = new Monitor_1.Monitor("4K", "HP", 1366, new resolution_1.Resolution(1366, 768));
+var motherboard = new Motherboard_1.Motherboard("Ultimate Motherboard", "13-12", 4, "HP", "v2.45", 4);
+var pc = new PC_1.PC(theCase, monitor, motherboard);
+console.log("RAM slots: " + pc.motherboard.RAMSlots);
+console.log("Computer model: " + pc.theCase.model);

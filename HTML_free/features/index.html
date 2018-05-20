@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Features</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="#">Top</a>
+        <a href="#demos">Demos</a>
+        <a href="#sliot">Sliders and bars</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#jsand">JS sandbox</a>
+        <a href="#filt">Filter List</a>
+        <a href="#modals">Modals and more</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div id="snackbar"><span id="snackclose" onclick="snaclose();">&times;</span><span id="snacktext">This is a snackbar</span></div>
+    <div class="main">
+        <h1>Features</h1>
+        <p>Welcome to features. This is also a safe website <br> I am not a hacker so you are safe even though <br> your browser says that it is not secure.</p>
+        <h2 id="demos">Demos</h2>
+        <br>
+        <div class="demo">
+            <div class="sidenavdemo">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="maindemo">
+                <h1>Auto Sidebar</h1>
+                <p>This sidebar adjusts it's height. This is used on the main page. This is also some text to enable scrolling.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab earum corporis maiores nam libero non quidem ullam excepturi, animi voluptas similique, corrupti sit vel reprehenderit cumque. Ipsam magnam nihil error?
+                </p>
+                <p>Some text to enable scrolling. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae similique distinctio reprehenderit. Quibusdam deserunt eum architecto sapiente molestias nam. Temporibus dolores nulla hic excepturi veniam fugiat ducimus dolor saepe natus?</p>
+            </div>
+        </div>
+        <div class="demo">
+            <div class="sidenavdemo1">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#clients">Clients</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="maindemo">
+                <h1>Full Sidebar</h1>
+                <p>This sidebar is 100% height. This is also some text to enable scrolling. Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Ab earum corporis maiores nam libero non quidem ullam excepturi, animi voluptas similique, corrupti sit vel reprehenderit
+                    cumque. Ipsam magnam nihil error?
+                </p>
+                <p>Some text to enable scrolling. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae similique distinctio reprehenderit.
+                    Quibusdam deserunt eum architecto sapiente molestias nam. Temporibus dolores nulla hic excepturi veniam fugiat ducimus
+                    dolor saepe natus?</p>
+            </div>
+        </div>
+        <iframe src="parallax.html"></iframe>
+        <!-- <div class="demo"></div> -->
+        <br style="clear:left;">
+        <h2 id="sliot">Sliders and bars</h2>
+        <div class="demo" style="width:170px;height:130px;padding:14px;">
+            <label class="switch">
+                <input type="checkbox" id="boxChanger">
+                <span class="slider"></span>
+            </label>
+            <script>
+                
+            </script>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <br>
+            <br>
+            
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <br style="clear:left">
+        <div class="mov-bar-cont">
+            <div class="mov-bar">
+                <p id="progressBar"></p>
+            </div>
+        </div>
+        <br>
+        <button id="prun" onclick="run()">Run</button>
+        <h2 id="buttons">Buttons</h2>
+        <button>Default</button>
+        <button class="success">Success</button>
+        <button class="danger">Danger</button>
+        <button class="warning">Warning</button>
+        <button class="info">Info</button>
+        <button class="primary">Primary</button>
+        <h2 id="jsand">JS Sandbox</h2>
+        <script src="https://embed.runkit.com" data-element-id="nodejsSandbox"></script>
+        <div class="demo" style="padding-left:10px;padding-top:70px;">
+            <div id="nodejsSandbox" class="liveJC" style="width:390px;">
+                //Type in your code here and click run //Delete the comments first //Choose Node 9.3.0 and run
+            </div>
+            <p><i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by Sharan and Runkit</p>
+        </div>
+        <br style="clear:left;">
+        <h2 id="filt">Filter List</h2>
+        <p><i class="fa fa-filter"></i> this <i class="fa fa-list"></i> by typing into that input</p>
+        <input type="text" class="filter" onkeyup="filter();" id="list">
+        <ul id="fltul">
+            <li>Sharan</li>
+            <li>Sajiv</li>
+            <li>Anu</li>
+            <li>Cheetah</li>
+            <li>Lion</li>
+            <li>Tiger</li>
+            <li>Leopard</li>
+            <li>Jaguar</li>
+            <li>Jahnvi</li>
+        </ul>
+        <h2 id="modals">Modals and popups</h2>
+        <button class="success" onclick="openModal()">Open Modal</button>
+        <div class="popup" onclick="showPopup()">
+            <button>Show popup</button>
+            <span class="popuptext" id="myPopup">This is a popup</span>
+        </div>
+        <button class="info" onclick="snaToggle()">Show snackbar</button>
+        <button class="danger" onclick="openNot(0)">Show notification</button>
+        <br>
+        <div class="notification" id="0">
+            <span class="closeNot" onclick="closeNot(0)">&times;</span>
+            This is a notification
+            <br>
+            <span class="notSource">Source: Tips</span>
+            <div class="NotbuttonC">
+                <button onclick="closeNot(0)">Dismiss</button>
+                <button>Learn More</button>
+            </div>
+        </div>
+        <br>
+        <!-- <input id="snackinp" placeholder="Write some text..." maxlength="28" style="width:90%;margin-right:10px;"><button onclick="writeSnack()">Enter</button> -->
+        <p>Click on the popup to close it</p>
+        <q>If you get the things that you like more often, <br>than you would not get the things that are essential.</q>
+        <br>
+        <span class="author">-Sajiv Kamalakaran</span>
+        <div class="modal">
+            <div class="modal-content" style="animation-name: slideIn;">
+                <div class="modal-header">
+                    <span id="mdlcls" onclick="closeModal()">×</span>
+                    <h1>Hello</h1>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel mi sit amet orci consequat suscipit. Quisque
+                        molestie nec nulla sit amet dapibus. Vivamus molestie vehicula sem eget finibus. Pellentesque eu pretium
+                        nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis ex nunc, vitae ornare justo
+                        consectetur ut. Praesent a leo elementum, iaculis tortor vitae, congue purus. Mauris gravida orci at nibh
+                        eleifend pretium. Nam facilisis ipsum vel erat sagittis rutrum. Ut interdum elit nulla. Nam sit amet eleifend
+                        ante. Vivamus ullamcorper elementum nisl, nec fermentum turpis mollis eget. Donec dignissim nunc ut lectus
+                        rhoncus ornare. Nam et ultrices velit. Vestibulum eu felis vel massa elementum congue. Aenean ante neque,
+                        aliquam quis fringilla sed, laoreet id tellus. Vestibulum commodo augue eu est ullamcorper, vitae dapibus
+                        nunc mollis. Quisque vel vehicula odio. Donec ullamcorper dapibus massa, vel consequat lectus rutrum vel.
+                        Donec in nulla cursus, pharetra orci in, pulvinar tellus. In nec condimentum metus. Phasellus non odio eu
+                        mauris rutrum tempus vitae eget lectus. Vivamus sed justo vitae elit luctus aliquet sed et lacus.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <p>©<span class="year">2017</span> Sharan Sajiv Menon</p>
+                </div>
+            </div>
+        </div>
+        <p>If you have noticed, I have put many icons throught this page. <br>These icons are from font awesome.</p>
+        <h2 id="contact">Contact</h2>
+        <div class="container">
+            <form>
+                <label for="fname">First Name</label>
+                <input type="text" class="contInp" id="fname" name="firstname" placeholder="First name..">     
+
+                <label for="lname">Last Name</label>
+                <input type="text" class="contInp" id="lname" name="lastname" placeholder="Last name..">
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                    <option value="norway">Norway</option>
+                </select>
+        
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <br>
+        <div class="pagination">
+            <a>&laquo;</a>
+            <a class="active" href="main.html">1</a>
+            <a href="pg2.html">2</a>
+            <a href="pg3.html">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="pg2.html">&raquo;</a>
+        </div>
+        <br>
+    </div>
+    <footer>
+        <p>&copy; Copyright
+            <span class="year"></span> Sharan Sajiv Menon</p>
+        <button class="info">
+            <i class="fab fa-twitter"></i>
+        </button>
+        <button class="primary">
+            <i class="fab fa-facebook"></i>
+        </button>
+        <button class="danger">
+            <i class="fab fa-google-plus"></i>
+        </button>
+        <button class="danger">
+            <i class="fab fa-pinterest"></i>
+        </button>
+        <button class="danger">
+            <i class="fab fa-youtube"></i>
+        </button>
+    </footer>
+</body>
+<script src="script.js"></script>
+<script src="main.js"></script>
+</html>

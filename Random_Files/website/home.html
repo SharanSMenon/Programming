@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Random Things By Sharan</title>
+</head>
+<body onload="show()" class="">
+    <div class="load-container">
+        <div class="loader"></div>
+    </div>
+    <div class="sidenav">
+        <h1>Contents</h1>
+        <a href="#top">Top</a>
+        <a href="#filter">Filters</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+        <p>&copy; Sharan Sajiv Menon</p>
+    </div>
+    <div class="main">
+        <div id="navbar">
+            <a href="home.html" class="links">Home</a>
+            <a href="about.html" class="links">About</a>
+            <div class="dropdown">
+                <a href="fun.html" class="links">Fun <i class="fa fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a class="dropa" href="study.html">Study Guide</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <span id="top"></span>
+        <h1>Random Things By Sharan</h1>
+        <h1 id="filter">Filter</h1>
+        <input placeholder="Type to filter list" class="filterInp" onkeyup="filter(0)">
+        <ol class="filterList">
+            <li>Humpback Whale</li>
+            <li>Orca</li>
+            <li>Blue Whale</li>
+            <li>Jaguar</li>
+            <li>Sharan</li>
+            <li>Sajiv</li>
+            <li>Anu</li>
+            <li>Jahnvi</li>
+            <li>Lion</li>
+            <li>Tiger</li>
+            <li>Cheetah</li>
+            <li>Bottlenose Dolphin</li>
+            <li>Meercat</li>
+            <li>Puma</li>
+            <li>Smilodon</li>
+        </ol>
+    </div>
+</body>
+<script src="home.js"></script>
+<script src="all.js"></script>
+</html>

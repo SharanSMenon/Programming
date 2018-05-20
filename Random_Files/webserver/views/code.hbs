@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code Builder </title>
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+	<style>
+		#MenuBar{
+			width:100%;
+			height:40px;
+			background-color:#dd4444;
+			border-bottom:1px solid grey;
+			margin:0 auto;
+		}
+		body{
+			margin:0px;
+			padding:0px;
+			font-family: 'Architects Daughter', cursive;
+			font-weight:300;
+		}
+		#logo{
+			padding:10px 0 0 20px;
+			font-weight:bold;
+			font-size:120%;
+			float:left;
+		}
+		#Button1{
+			float:right;
+			padding:7px 17px 10px 0;
+		}
+		#runButton{
+			color:black;
+			border-radius:10px;
+			border:1px solid grey;
+			height:28px;
+			width:49px;
+			font-family:'Architects Daughter', cursive;
+			font-size:120%;
+			background-color:#e01f1f;
+
+		}
+		#runButton:hover{
+			background-color:#b20e0e;
+		}
+		#toggles{
+			width:199px;
+			margin:0 auto;
+			list-style:none;
+			border-radius:3px;
+			height:27px;
+			border:1px solid grey;
+			background-color:#e01f1f;
+			padding:0;
+			position:relative;
+			top:5px;
+
+
+		}
+		#toggles li{
+			float:left;
+			border-right:1px solid grey;
+			padding:3px 7px;
+      cursor: pointer;
+		}
+		.clear{
+			clear:both;
+			padding:0;
+			margin:0;
+		}
+		.codeContainer{
+			height:100%;
+			width:50%;
+			float:left;
+			margin:0 auto;
+			position:relative;
+
+		}
+		.codeContainer textarea{
+			width:100%;
+			height:100%;
+			border:none;
+			border-right:1px solid grey;
+			font-family:lucida console;
+			padding:3px;
+			box-sizing:border-box;
+		}
+		.codelabel{
+			position:absolute;
+			right:13px;
+			top:10px;
+			border:1px solid grey;
+			border-radius:3px;
+			background-color:#e01f1f;
+			padding:2px;
+		}
+		#CSSContainer, #JSContainer{
+			display:none;
+		}
+		iframe{
+			height:97%;
+			position:relative;
+			width:98%;
+			left:10px;
+			border:none;
+
+		}
+		.selected{
+			background-color:#b20e0e;
+		}
+	</style>
+</head>
+<body>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<div id="wrapper">
+		<div id="MenuBar">
+			<div id="logo">{{name}}</div>
+			<div id="Button1"><button id="runButton">Run</button></div>
+			<ul id="toggles">
+				<li class="togg selected">HTML</li>
+				<li class="togg">CSS</li>
+				<li class="togg">JS</li>
+				<li class="togg selected" style="border:none">Result</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="codeContainer" id="HTMLContainer">
+			<div class="codelabel">HTML</div>
+			<textarea id="htmlcode"><h1><u>Welcome to Code Builder </u></h1>
+<!--This works best in Google Chrome--></textarea>
+		</div>
+		<div class="codeContainer" id="CSSContainer">
+			<div class="codelabel">CSS</div>
+			<textarea id="csscode">html{
+    font-family: lucida calligraphy;
+}
+h1{
+    border:1px solid red;
+    border-radius:10px;
+    background-color:red;
+    width:300px;
+}
+</textarea>
+		</div>
+		<div class="codeContainer" id="JSContainer">
+			<div class="codelabel">JS</div>
+			<textarea id="jscode" class="lined">alert("Welcome to Code Builder");</textarea>
+		</div>
+		<div class="codeContainer" id="ResultContainer">
+			<div class="codelabel">Result</div>
+			<iframe id="resultFrame"></iframe>
+		</div>
+		<script>
+			var windowHeight=$(window).height();
+			var menuBarHeight=$("#MenuBar").height();
+			var CodeContainerH = windowHeight-menuBarHeight;
+			$(".codeContainer").height(CodeContainerH+"px");
+			$(".togg").click(function(){
+				$(this).toggleClass("selected");
+				var activeDiv=$(this).html();
+				$("#"+activeDiv+"Container").toggle();
+				var showingDivs= $(".codeContainer").filter(function(){
+					return($(this).css("display")!="none");
+				}).length;
+				var width = 100/ showingDivs;
+				$(".codeContainer")	.css("width",width+"%");
+			});
+			$("#runButton").click(function(){
+				$("iframe").contents().find("html").html('<style>'+$("#csscode").val()+'</style>'+$("#htmlcode").val());
+				document.getElementById("resultFrame").contentWindow.eval($("#jscode").val());
+			});
+		</script>
+
+
+
+
+	</div>
+
+
+
+</body>
+</html>

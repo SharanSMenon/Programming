@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="pg3.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidenav2">
+        <a href="#">Top</a>
+        <a href="#change">Change Log</a>
+        <a href="#contact">Contact</a>
+        <!-- <a href="#tabs">Tabs Demo</a> -->
+    </div>
+    <!-- <div id="snackbar">This is a snackbar</div> -->
+    <div class="main">
+        <h1>Welcome to Page 3</h1>
+        <p>This is page 3 of features. You should <br> go check out page 1 and 2 if you haven't <br> done so already. Since this is Features, <br> I have given page 3 a new design.</p>
+        <p>If you were at page 2, you should have <br>seen a <button disabled="disabled" style="padding:5px;"class="warning">button</button> that looked something <br> like the button shown above. That button <br> had some text under it and it told that this is page 3. <br> It is indeed true and this is page 3. <br> Did you get surprised?</p>
+        <h2 id="change">Change log below</h2>
+        <div id="changelog">
+            <h2>Change log</h2>
+            <ol>
+                <li>Changed design from previous pages.</li>
+                <li>Has new features.</li>
+                <li>Created a changelog as a feature.</li>
+                <li>Make the page look a little more natural</li>
+                <li>How does this <button disabled="disabled" style="padding:5px;">button</button> look?</li>
+            </ol>
+        </div>
+        <br>
+        <h1>Marquee</h1>
+        <marquee style="width:200px;">Hello. This text is scrolling horizontally.</marquee>
+        <h2 id="contact">Contact</h2>
+        <div class="container">
+            <form>
+                <label for="fname">First Name</label>
+                <input type="text" class="contInp" id="fname" name="firstname" placeholder="First name..">
+        
+                <label for="lname">Last Name</label>
+                <input type="text" class="contInp" id="lname" name="lastname" placeholder="Last name..">
+        
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                    <option value="norway">Norway</option>
+                </select>
+        
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <br>
+        <div class="pagination">
+            <a href="pg2.html">&laquo;</a>
+            <a href="index.html">1</a>
+            <a href="pg2.html">2</a> 
+            <a class="active" href="pg3.html">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#.html">&raquo;</a>
+        </div>
+        <br>
+        <footer style="margin-left:-10px;margin-right:-10px;">
+            <p>&copy; Copyright
+                <span class="year"></span> Sharan Sajiv Menon</p>
+            <button class="info">
+                <i class="fab fa-twitter"></i>
+            </button>
+            <button class="primary">
+                <i class="fab fa-facebook"></i>
+            </button>
+            <button class="danger">
+                <i class="fab fa-google-plus"></i>
+            </button>
+            <button class="danger">
+                <i class="fab fa-pinterest"></i>
+            </button>
+            <button class="danger">
+                <i class="fab fa-youtube"></i>
+            </button>
+        </footer>
+    </div>    
+</body>
+</html>

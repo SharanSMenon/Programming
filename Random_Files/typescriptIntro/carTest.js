@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var classes_1 = require("./classes");
+var engineCar = new classes_1.EngineCar("1-ab", "Super-V8 5");
+var car1 = new classes_1.SuperCar(250, engineCar, "Bugatti Veyron");
+console.log(car1.engine.model);
+car1.accelerate(100);
+console.log(car1.speed);
+car1.throttle(30);
+console.log(car1.speed);

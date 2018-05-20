@@ -1,0 +1,12 @@
+.tmp.drivedownload
+.ipynb_checkpoints
+node_modules
+venv
+.vscode
+.idea
+DaddyMacro
+.git
+AlgorithmsCoursera
+plotly
+Random_Files/access_database_test
+Random_Files/Macro_test

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Gapminder Clone</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="d3-tip.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="logo.png">
+            </a>
+        </div>
+    </nav>
+    <!-- Bootstrap grid setup -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <button id="play-button" class="btn btn-primary">Play</button>
+                <button id="reset-button" class="btn btn-primary">Reset</button>
+                <label>Year
+                    <span id="year">1800</span>
+                </label>
+                <div class="slider-div" style="position: relative;left:140px;width: 300px;">
+                    <div id="date-slider"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <select id="continent-select" class="form-control">
+                    <option selected value="all">All</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="americas">Americas</option>
+                    <option value="africa">Africa</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div id="chart-area"></div>
+        </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

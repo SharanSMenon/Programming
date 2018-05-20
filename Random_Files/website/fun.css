@@ -1,0 +1,41 @@
+.subsection{
+    overflow: hidden;
+    transition: 2s;
+    height:0px;
+    /* background-color: aliceblue; */
+}
+#s1{
+    transition: height 2s;
+}
+.sidenav span{
+    float: right;
+    margin-top: -45px;
+}
+.sidenav span:hover{
+    color:white;
+    cursor: pointer;
+}
+.static-bar-cont{
+    width:100%;
+    height:30px;
+    background-color: #eee;
+}
+.static-bar{
+    height:100%;
+    text-align: center;
+    padding:5px;
+    background-color: #333;
+    color:white;
+}
+.mov-bar-cont{
+    width:100%;
+    height:30px;
+    background-color: #eee;
+}
+.mov-bar{
+    height:100%;
+    text-align: center;
+    width:0%;
+    background-color: #333;
+    color:white;
+}

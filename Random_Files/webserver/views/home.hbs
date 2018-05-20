@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{pageTitle}}</title>
+    {{> imports}}
+</head>
+<body>
+    {{> header}}
+    <div class="container-fluid">
+      <h1>Home</h1>
+      <p>Welcome to home</p>
+      <p>The current year is {{currentYear}}</p>
+      <p>There are many things in this one server.</p>
+      <h2>List of urls</h2>
+      <p>Note: All pages will have a list of URLs corresponding to their location</p>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/code">Code Editor</a></li>
+        <li><a href="/links">Links</a></li>
+      </ul>
+    </div>
+    {{> footer}}
+</body>
+</html>

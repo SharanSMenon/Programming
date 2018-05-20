@@ -1,0 +1,6 @@
+Monday is cloudy
+Tuesday is snowy
+Wednesday is rainy
+Thursday is snowy
+Friday is sunny
+Saturday is snowy

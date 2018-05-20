@@ -1,0 +1,36 @@
+.tabheader{
+    overflow: hidden;
+    border-bottom: 1px solid grey;
+    background-color: rgb(194, 194, 194);
+}
+.tabheader button{
+    float: left;
+    transition:0s;
+    /* background-color: #ccc; */
+    border:none;
+    border-right:1px solid grey;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+    background-color: grey;
+    color:white;
+    overflow: auto;
+    height:calc(100% - 47px);
+}
+.tabheader button:active{
+    transform: scale(1);
+}
+.tabheader button:hover{
+    background-color: #eee;
+    color:black;
+}
+.active{
+    background-color: grey;
+    color:white;
+}
+.active:hover{
+    background-color:grey;
+}

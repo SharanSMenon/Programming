@@ -1,0 +1,49 @@
+How to hack into wifi passwords
+1. open cmd
+2. type in: netsh wlan show profiles
+3. type in: netsh wlan show profiles name="<Network name>" key=clear
+---------------------------------------------------------------------------------
+Profile RAINFOREST_5G on interface Wi-Fi 2:
+=======================================================================
+
+Applied: All User Profile
+
+Profile information
+-------------------
+    Version                : 1
+    Type                   : Wireless LAN
+    Name                   : RAINFOREST_5G
+    Control options        :
+        Connection mode    : Connect automatically
+        Network broadcast  : Connect even if this network is not broadcasting
+        AutoSwitch         : Do not switch to other networks
+        MAC Randomization  : Disabled
+
+Connectivity settings
+---------------------
+    Number of SSIDs        : 1
+    SSID name              : "RAINFOREST_5G"
+    Network type           : Infrastructure
+    Radio type             : [ Any Radio Type ]
+    Vendor extension          : Not present
+
+Security settings
+-----------------
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+    Authentication         : WPA2-Personal
+    Cipher                 : GCMP
+    Security key           : Present
+    --This is the password--
+    Key Content            : tenaliraman114
+
+Cost settings
+-------------
+    Cost                   : Unrestricted
+    Congested              : No
+    Approaching Data Limit : No
+    Over Data Limit        : No
+    Roaming                : No
+    Cost Source            : Default
+---------------------------------------------------------------------------------
+password is the key content

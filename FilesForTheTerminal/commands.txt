@@ -1,0 +1,9 @@
+grep -i lorem complex.txt --color=always
+sed 's/snowy/stormy/g' weather.txt
+sort oceans/oceans.txt | uniq
+cat oceans/oceans.txt | wc
+ls -a
+ls
+>>
+>
+|

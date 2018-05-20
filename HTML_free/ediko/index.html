@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ediko</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="fullmenu">
+        <a href="#" class="close" style="color:white;" onclick="toggleMenu(fullmenu)">&times;</a>
+        <a href="#">Top</a> <br>
+        <a href="#">Settings</a> <br>
+        <a href="#">Buttons</a> <br>
+        <a href="#">Cards</a><br>
+        <a href="#">Bottom</a><br>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" onclick="toggleMenu(fullmenu)">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+        <a href="#" class="navbar-brand"> </a>
+        <a class="navbar-brand" href="#">Ediko</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Study Guide
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Countries and Capitals</a>
+                        <a class="dropdown-item" href="Study_guide/Calculators/calculators.html">Calculators</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Resources</a>
+                    </div>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Settings</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Set menu width</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" onchange="menuWidth(this.selectedIndex)">
+                                <option value="false">33%</option>
+                                <option value="true">100%</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="carMaker" tabindex="-1" role="dialog" aria-labelledby="CarMaker" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Create Car</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <h3>Create Engine: </h3>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Set Model</label>
+                            </div>
+                            <input type="text" class="form-control" id="inputGroupSelect01">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Set Manufacturer</label>
+                            </div>
+                            <input type="text" class="form-control" id="inputGroupSelect01">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Set Type</label>
+                            </div>
+                            <input type="text" class="form-control" id="inputGroupSelect01">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Set Cylinders</label>
+                            </div>
+                            <input type="text" class="form-control" id="inputGroupSelect01">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Set Horsepower</label>
+                            </div>
+                            <input type="text" class="form-control" id="inputGroupSelect01">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-xs-12">
+            <h1>Welcome to Ediko</h1>
+        </div>
+        <hr>
+        <div class="col-xs-12">
+            <h2>Danger zone</h2>
+            <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Settings</button>
+        </div>
+        <hr>
+        <div class="col-xs-12">
+            <h2>Some info</h2>
+            <div class="bd-example">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3>Welcome</h3>
+                        <p>This is Ediko. A sister of Editoe</p>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3>Tab 2</h3>
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <h3>Contact</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <h2>Lots of button examples</h2>
+            <h3>Normal buttons</h3>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-default">Default</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-dark">Dark</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-light">Light</button>
+            <h3>Outline buttons</h3>
+            <button class="btn btn-outline-primary">Primary</button>
+            <button class="btn btn-outline-secondary">Secondary</button>
+            <button class="btn btn-outline-success">Success</button>
+            <button class="btn btn-outline-info">Info</button>
+            <button class="btn btn-outline-warning">Warning</button>
+            <button class="btn btn-outline-danger">Danger</button>
+            <button class="btn btn-outline-dark">Dark</button>
+            <button class="btn btn-outline-light">Light</button>
+        </div>
+        <hr>
+        <div class="col-xs-12">
+            <h2>Card</h2>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <h2>Car Creator</h2>
+            <button class="btn btn-info" data-toggle="modal" data-target="#carMaker">Create Car</button>
+        </div>
+    </div>
+    <hr>
+    <section id="footer">
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Editoe</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>About</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>FAQ</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Get Started</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Videos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>About</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>FAQ</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Get Started</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Videos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>More..</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>About</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>FAQ</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();">
+                                <i class="fa fa-angle-double-right"></i>Get Started</a>
+                        </li>
+                        <li>
+                            <a href="https://wwwe.sunlimetech.com" title="Design and developed by">
+                                <i class="fa fa-angle-double-right"></i>Imprint</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();" target="_blank">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p>This is by Sharan Sajiv Menon</p>
+                    <p class="h6">&copy All right Reversed.
+                        <a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sharan Sajiv Menon</a>
+                    </p>
+                </div>
+                </hr>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,2 @@
+Run the command below:
+javac Main.java -d ..\out && cd ..\out && java Main && cd ..\src

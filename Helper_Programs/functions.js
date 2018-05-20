@@ -1,0 +1,11 @@
+let sum = (a, b) => a + b;
+let diff = (a, b) => a - b;
+let prod = (a, b) => a * b;
+let quot = (a, b) => a / b;
+testlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(testlist.reduce(sum));
+console.log(testlist.reduce(diff));
+console.log(testlist.reduce(prod));
+console.log(testlist.reduce(quot));
+console.log(testlist.map((a) => a*a));
+console.log(testlist.filter((a) => a > 4));

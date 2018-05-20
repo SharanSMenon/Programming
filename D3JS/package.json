@@ -1,0 +1,15 @@
+{
+  "name": "d3js",
+  "version": "1.0.0",
+  "description": "D3 js intro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sharan Sajiv Menon",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.4.0",
+    "d3-tip": "^0.9.1"
+  }
+}

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Text in green are comments.-->
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<script src="jquery-linedtextarea.js"></script>
+	<link href="jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
+
+	<style>
+	    body {
+      background:url(http://www.planwallpaper.com/static/images/518164-backgrounds.jpg);
+      font-family: 'Architects Daughter', cursive;
+			background-repeat:no-repeat;
+			background-size:cover;
+			background-attachment:fixed;
+			text-align:center;
+
+	    }
+	    h2 {
+	        color:blue;
+	    }
+	    #toc {
+	        color:black;
+	    }
+	    p {
+	        color:red;
+	    }
+	    .con {
+	        font-weight:bold;
+	    }
+		img {
+			border:double;
+			}
+		#stay{
+			background-color:white;
+			align:left;
+			position:fixed;
+			width:100%;
+			top:0;
+			height:70px;
+			left:0;
+			border-bottom:3px black solid;
+		}
+		#stay h1{
+			float:left;
+			margin-top:13px;
+			margin-left:10px;
+		}
+		#stay .prog{
+			margin-left:300px;
+			margin-top:25px;
+		}
+		div { text-align: center; }
+		ul { display: inline-block; text-align: left; }
+		ol { display: inline-block; text-align: left; }
+		#devd {
+			border:ridge;
+		}
+		a:visited{
+			color:green;
+		}
+		a:hover{
+			background-color:grey;
+		}
+		button{
+			border-radius:3px;
+			border: 1px solid black;
+			font-family: 'Architects Daughter', cursive;
+			height:30px;
+			width:90px;
+			background-color:#00bfff;
+			font-size:1em;
+		}
+		input{
+			border-radius:3px;
+			border:1px solid black;
+			font-family: 'Architects Daughter', cursive;
+			height:30px;
+			width:294px;
+			font-size:1em;
+			padding:3px;
+
+		}
+		button:hover{
+			background-color:#0054db;
+		}
+		input:hover{
+			background-color: #9da4b0;
+		}
+		.none{
+			border-radius:0px;
+			height:15px;
+			width:15px;
+			padding:none;
+		}
+		.cde{
+			background-color:#384947;
+			color:white;
+			padding:3px;
+			text-align:left;
+			border-radius:3px;
+			padding-top:0px;
+			padding-bottom:2px;
+		}
+		.tag{
+			color:#ea4848;
+		}
+		.black{
+			background-color:white;
+			width:1040px;
+			height:550px;
+			margin-left:150px;
+		}
+		/*HTML editor*/
+		.ifr{
+			width:500px;
+			height:500px;
+			float:left;
+		}
+		.txt{
+			top:15px;
+			margin-left:70px;
+			float:left;
+			background-color:white;
+			clear:both;
+		}
+		#kany{
+			width:1100px;
+			height:530px;
+			clear:both;
+			background-color:white;
+			padding:10px;
+			margin-left:100px;
+		}
+		.cleab{
+			clear:both;
+			padding:5px;
+		}
+		.clear{
+			clear:both;
+		}
+		body::-webkit-scrollbar {
+		    width: 30px;
+		    background-color:#7583;
+		    cursor:pointer;
+		}
+		body::-webkit-scrollbar-thumb {
+		    background-color:grey;
+		    cursor:pointer;
+		}
+		body::-webkit-scrollbar-thumb:hover{
+		    background-color: black;
+		    cursor:crosshair;
+		}
+		body::-webkit-scrollbar-track {
+		    background-color:darkgrey;
+		    cursor:pointer;
+		}
+			</style>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Sharan's Website</title>
+    </head>
+    <body>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<h2 id="top"></h2>
+		<div id="stay">
+        <h1 style="padding-top:18px;
+		  height:50px;
+		  margin:0;
+		  float:left;
+		  clear:both;
+		  padding-right:15px;
+		  border-right:1px solid black;
+		  margin-left:7px;;">Sharan's Website</h1>
+				<div class="prog" style="background-color:#eee;height:20px;width:70%;position:fixed;">
+		      <div class="prog-bar" style="background-color:green;width:0%;height:100%;">
+		      </div>
+		    </div>
+				<script type="text/javascript">
+				$(document).ready(function() {
+					var docHeight = $(document).height(),
+					windowHeight = $(window).height(),
+					scrollPercent;
+					$(window).scroll(function() {
+						scrollPercent = $(window).scrollTop() / (docHeight - windowHeight) * 100;
+						$('.prog-bar').width(scrollPercent + '%');
+
+					});
+				});
+				</script>
+		</div>
+
+		<!--"<br/></br>" is a line break-->
+		<br/><br/>
+        <h2 id="toc"><u>Table of contents</u></h2>
+		<div>
+        <ol>
+	         <li class="con"><a href="#mtsh"> Meet Sharan</a></li>
+	         <li class="con"><a href="#sinter"> Sharan's Interests</a></li>
+	         <li class="con"><a href="#sgd"> Some Good Links</a></li>
+					 <li class="con"><a href="#Poga">Photo gallery</a></li>
+					 <li class="con"><a href="#Jagg">About jaguars</a></li>
+					 <li class="con"><a href="#jahn">Jahnvi's webpage</a></li>
+					 <li class="con"><a href="#blo"> Sharan's Blog</a></li>
+					 <li class="con"><a href="#Org">Origami</a></li>
+					 <li class="con"><a href="#math">Try some math problems</a></li>
+					 <li class="con"><a href="#ad1">Introducing... The Sharan Maker</a></li>
+					 <li class="con"><a href="#family">My Family</a></li>
+					 <li class="con"><a href="#relmus">Listen to some relaxing music</a></li>
+					 <li class="con"><a href="#guess1">Guessing game</a></li>
+					 <li class="con"><a href="#guess2">Guessing game reversed</a></li>
+					 <li class="con"><a href="#fc">Fahrenheit and celsius converters</a></li>
+					 <li class="con"><a href="#rdm">Random</a></li>
+					 <li class="con"><a href="#htm1">HTML</a></li>
+					 <li class="con"><a href="#htmed">HTML Editor</a></li>
+
+	     </ol>
+
+
+	     </div>
+
+	     <h2 id="mtsh"><u>Meet Sharan</u></h2>
+
+	     <p>Hi, My name is Sharan and I am 11 years old<br>
+	     This website was made because I like computer programming.<br>
+		 Batman is the best superhero of all times.<br>
+		 Look at the <em>whole</em> webpage.<br>
+		 Note: Never say <strong><strike>Me and somebodywent to the mall</strike></strong>, say <em><strong>Somebody and I went to the mall</strong></em>.<br>
+		 You wouldn't say, <em> me went to the mall.</em> Would you say that? If you said yes, you are probably stupid.<br>
+		 If you said no, good for you.<br>Do you want to know where I live?</p>
+		 <button id="trick1">Find out</button>
+		 <p id="trick1_text"></p>
+		 <script>
+		 	$("#trick1").click(function() {
+				$("#trick1_text").html("Did you really think I would show you where I live?");
+
+		})
+		 </script>
+		 <!--this Picture leads into an interactive periodic table-->
+
+	    </p>
+        <a href="http://www.ptable.com"> <img src="https://upload.wikimedia.org/wikipedia/en/archive/3/34/20090928200859!Periodic_table_by_article_value.PNG" width="270" height="160" target="_blank"></a>
+		<hr>
+		<script type="text/javascript">
+			$("#ress").resizable();
+		</script>
+        <h2 id="sinter"><u>Sharan's Interests</u></h2>
+        <h3>Type a number from 1 to 10 to see Sharan's 10 favorite activities</h3>
+		<input id="Choose" type="text" placeholder="Type a number" width=30px/><button id="Submit">Submit</button>
+		<div id="pertext"></div>
+		<script>
+		var fav_activities = new Array();
+		fav_activities[0]="Computer Programming";
+		fav_activities[1]="Badminton";
+		fav_activities[2]="Running";
+		fav_activities[3]="Chemistry";
+		fav_activities[4]="Electronics";
+		fav_activities[5]="Biology";
+		fav_activities[6]="Watching YouTube";
+		fav_activities[7]="Being Awesome";
+		fav_activities[8]="Tennis";
+		fav_activities[9]="Video Games";
+		console.log(fav_activities);
+		console.log("Hello");
+		var fav = document.getElementById("Choose").value;
+		document.getElementById("Submit").onclick=function(){
+			fav = document.getElementById("Choose").value-1;
+			if(fav > 10){
+				$("#pertext"),html("Enter a number from 1 to 10;");
+			}
+			document.getElementById("pertext").innerHTML = fav_activities[fav];
+		}
+		</script>
+		<br /><br />
+		<hr>
+        <h2 id="sgd"><u>Some good links</u></h2>
+		</div>
+        <ul>
+            <li><a href="http://www.google.com" target=_blank>Google (search engine and some other features)</a></li>
+            <li><a href="http://diep.io" target=_blank>Diep.io (games)</a></li>
+            <li><a href="http://www.friv.com" target=_blank>friv (games)</a></li>
+            <li><a href="http://www.youtube.com" target=_blank>Youtube (videos)</a></li>
+            <li><a href="http://slither.io" target=_blank>Slither.io (games)</a></li>
+        </ul>
+        </div>
+		<hr>
+		<h2 id="Poga"><u>Photo gallery</u></h2>
+		<a href="file:///C:/sharan/Sharan's%20website_files/photo-gallery.html">Click to see a cool photo gallery.</a>
+
+		<h2 id="Jagg"><u>About Jaguars</u></h2>
+
+		<h4>Jaguars are my favorite animals so i wanted to have<br>
+		article about them</h4>
+
+		<p>Click the image</p>
+
+		<a href="https://en.wikipedia.org/wiki/Jaguar"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Standing_jaguar.jpg" width="200" height="200"></a>
+
+		<hr>
+
+		<h2 id="jahn"><u>Jahnvi's webpage</u></h2>
+
+		<a href="file:///C:/sharan/Sharan's%20website_files/Jahnvi-page.html">Click to go to jahnvi's webpage</a>
+
+		<hr>
+		<h2 id="blo"> Sharan's Blog</h2>
+
+		<a href="file:///C:/sharan/Sharan's%20website_files/Sharan-blog.html">Click to go to Sharan's blog</a>
+		<p>In this blog, I will write about most stuff I do<br>
+		and most of them are fun stuff so yeah.</p>
+		<hr>
+		<h2 id="Org"><u>Origami</u></h2>
+
+		<p> I have some cool origami projects I made myself.</p>
+
+		<a href="file:///C:/sharan/Sharan's%20website_files/origami.html">Click to got the page where my origami projects are.</a>
+		<hr>
+		<h2 id="math"><u>Try some math problems</u></h2>
+		<p>* = multiplication, / = division, ^ = to the power of.</p>
+		<p>Check the boxes that you got correct.</p>
+		<ol>
+			<li><input class="none"type="checkbox"/>3^3</li>
+			<li><input class="none"type="checkbox"/>12*9</li>
+			<li><input class="none"type="checkbox"/>45/9</li>
+			<li><input class="none"type="checkbox"/>625/5</li>
+			<li><input class="none"type="checkbox"/>10^6</li>
+			<li><input class="none"type="checkbox"/>6*12</li>
+			<li><input class="none"type="checkbox"/>7*8</li>
+			<li><input class="none"type="checkbox"/>9^3</li>
+			<li><input class="none"type="checkbox"/>8^5*2</li>
+			<li><input class="none"type="checkbox"/>(8^5*2)*2</li>
+		</ol>
+		<p>How do you think you did?</p>
+
+
+
+		<a href = "file:///C:/sharan/Sharan_website_files/Answersmath1.html" target="_blank">Click this link to see the answers</a>
+		<hr>
+		<h2 id="ad1"><u>Introducing... The Sharan Maker!</u></h2>
+		<iframe src="file:///C:/sharan/Sharan_website_files/Awesome_sharan.html" width="640" height="505"></iframe>
+		<hr>
+		<h2 id="family"><u>My family</u></h2>
+		<!--This is a table of my family-->
+		<table border="10px" align="center" text-align="center">
+			<tr><th>Family Member</th>
+				<th>Age</th>
+				<th>Age ranking</th></tr>
+			<tr>
+				<td>Sajiv</td>
+				<td>40</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>Anu</td>
+				<td>36</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>Sharan</td>
+				<td>11</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>Jahnvi</td>
+				<td>7</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<p>Note: On the awesomeness scale, 1 is the worst and 10 is the best.</p>
+		<hr>
+		<h2 id="relmus"><u>Listen to some relaxing music</u></h2>
+		<iframe width="100" height="100" src="https://www.youtube.com/embed/DJUIgV7t8C0" frameborder="0" allowfullscreen></iframe>
+		<br/><br/>
+		<p>This music is said to be relaxing.<br>
+		Don't blame me if this is not relaxing.</p>
+		<hr>
+		<h2 id="guess1"><u>Guessing game</u></h2>
+		<h3>Description</h3>
+		<p>This is a classical guessing game. The computer generates a random number and<br>
+		You have to guess it.</p>
+		<p><em>Challenge: Try getting it <strong>under</strong> 5 guesses.</em></p>
+		<h3>Program</h3>
+		<p>Enter a number between 1 and 100:</p>
+		<input id="user_input" />
+		<button id="submit">Guess</button>
+		<button id="newnum"type="button" name="button" style="width:200px;">Generate new number</button>
+		<p id="gue"></p>
+		<p id="cor"></p>
+		<p id="wr"></p>
+		<p id="ls"></p>
+		<script>
+		var x = Math.random();
+		var guesses = 0;
+		x = 101*x;
+		x= Math.floor(x);
+		$("#newnum").click(function(){
+			x = Math.random();
+			guesses = 0;
+			x = 101*x;
+			x= Math.floor(x);
+			console.log("New guessing game number: "+x);
+		});
+			console.log("Guessing game number: "+x);
+			document.getElementById("submit").onclick=function(){
+				if (document.getElementById("user_input").value == x) {
+					guesses++;
+					$("#cor").html("You got it. It took you "+guesses+" guesses");
+					$("#gue").html("Number of guesses: "+guesses);
+					if(guesses <= 5){
+						$("#wr").html("Great! You completed the challenge!");
+					}else {
+						$("#wr").html("Good job");
+					}
+						$("#ls").html("Correct!");
+					console.log("You got it. It took you "+guesses+" guesses");
+				}else{
+						$("#wr").html("Wrong.");
+						$("#cor").html("");
+						guesses++;
+						$("#gue").html("Number of guesses: "+guesses);
+						console.log("Wrong number. Player has taken "+guesses+" guesses");
+						if(document.getElementById("user_input").value > x){
+							$("#ls").html("Try a smaller number.");
+						}else{
+							$("#ls").html("Try a larger number.");
+							}
+						}
+					}
+		</script>
+		<hr>
+		<h2 id="guess2"><u>Guessing game reversed</u></h2>
+		<h3>Description</h3>
+		<p>This is the opposite version of a guessing game.<br>
+		Here, you type in a number and the computer has to guess the number.</p>
+		<h3>Program</h3>
+		<p>Enter a number between 1 and 100:</p>
+		<input id="number" />
+		<button id="guess">Submit</button>
+		<p id="cha3"></p>
+		<script type="text/javascript">
+			document.getElementById("guess").onclick=function() {
+				var gotit=false; var guesses=1; var x;
+				while (gotit==false) {
+					x=Math.random();
+					x=101*x;
+					x=Math.floor(x);
+					console.log("Guessing game reversed number: "+x);
+					if (document.getElementById("number").value==x) {
+						gotit=true;
+						console.log("Computer guessed it in "+guesses+" tries");
+					} else {
+						guesses++;
+						console.log("Computer got it wrong. It has been "+guesses+" guesses");
+					}
+				}
+				$("#cha3").html("Got it! It was "+x+". It took "+guesses+" guesses!");
+			}
+		</script>
+		<hr>
+		<h2 id="fc">Fahrenheit and Celsius converters</h2>
+		<h3>Fahrenheit to Celsius</h3>
+		<input id="fahren" />
+		<button id="Sub">Submit</button>
+		<br>
+		<p id="cha1"></p>
+		<script>
+			document.getElementById("Sub").onclick = function(){
+				function fToC(){
+					var fahren = document.getElementById("fahren").value;
+					var celcius = 5.0 / 9.0*(fahren-32);
+					celcius = Math.round(celcius);
+					$("#cha1").html(fahren+" degrees fahrenheit is "+celcius+" degrees celsius");
+				}
+				fToC();
+			}
+		</script>
+		<h3>Celsius to Fahrenheit</h3>
+		<input id="celsius" />
+		<button id="sub">Submit</button>
+		<br>
+		<p id="cha2"></p>
+		<script>
+			document.getElementById("sub").onclick=function(){
+				function cToF(){
+					var celsius = document.getElementById("celsius").value;
+					var fahren = celsius*(9.0 / 5.0) + 32;
+					fahren = Math.round(fahren);
+					$("#cha2").html(celsius+" degrees celsius is "+fahren+" degrees fahrenheit.");
+
+				}
+				cToF();
+			}
+		</script>
+		<hr>
+		<br/></br/>
+		<h2 id="rdm"><u>Random</u></h2>
+		<iframe src="file:///C:/sharan/Learning_html/Atom.html" height="500px" width="1300px"></iframe>
+		<hr>
+		<h2 id="htm1"><u>HTML </u></h2>
+		<h3>This webpage is made using HTML, CSS, Javascript and many othe things</h3>
+		<h3><u>Structure of a webpage</u></h3>
+		<p>There is a DOCTYPE html tag at the top of each html file</p>
+		<div class="cde" style="width:175px;height:165px;margin-left:580px;padding-left:15px;">
+			<pre>
+			<code>
+<span style="color:grey;"><em>&lt;!DOCTYPE html&gt;</em></span>
+&lt;<span class="tag">html</span>>
+ &lt;<span class="tag">head</span>>
+  &lt;<span class="tag">title</span>&gt;&lt;/<span class="tag">title</span>&gt;
+ &lt;/<span class="tag">head</span>&gt;
+ &lt;<span class="tag">body</span>&gt;
+ &lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;
+			</code>
+			</pre>
+		</div>
+		<br>
+		<h3><u>General Tags</u></h3>
+		<div class="cde" style="width:270px;height:270px;margin-left:530px;padding-left:15px;">
+			<pre>
+				<code>
+<span style="color:grey;"><em>&lt;!DOCTYPE html&gt;</em></span>
+&lt;<span class="tag">html</span>>
+ &lt;<span class="tag">head</span>>
+  &lt;<span class="tag">title</span>&gt;General Tags&lt;/<span class="tag">title</span>&gt;
+ &lt;/<span class="tag">head</span>&gt;
+ &lt;<span class="tag">body</span>&gt;
+  &lt;<span class="tag">h1</span>>This is a header&lt;/<span class="tag">h1</span>&gt;
+  &lt;<span class="tag">h2</span>>This is another header&lt;/<span class="tag">h2</span>&gt;
+  &lt;<span class="tag">h3</span>>This is a another header&lt;/<span class="tag">h3</span>&gt;
+  &lt;<span class="tag">h4</span>>This is a another header&lt;/<span class="tag">h4</span>&gt;
+  &lt;<span class="tag">h5</span>>This is a another header&lt;/<span class="tag">h5</span>&gt;
+  &lt;<span class="tag">h6</span>>This is a another header&lt;/<span class="tag">h6</span>&gt;
+  &lt;<span class="tag">p</span>>This is a paragraph&lt;/<span class="tag">p</span>&gt;
+ &lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;
+				</code>
+			</pre>
+		</div>
+		<br>
+		<h3><u>Bold, underline, itallics, strike through</u></h3>
+		<div class="cde" style="width:250px;height:210px;margin-left:540px;padding-left:15px;">
+			<pre>
+				<code>
+<span style="color:grey;"><em>&lt;!DOCTYPE html&gt;</em></span>
+&lt;<span class="tag">html</span>>
+ &lt;<span class="tag">head</span>>
+  &lt;<span class="tag">title</span>&gt;B.U.I.S&lt;/<span class="tag">title</span>&gt;
+ &lt;/<span class="tag">head</span>&gt;
+ &lt;<span class="tag">body</span>&gt;
+  &lt;<span class="tag">p</span>&gt;&lt;<span class="tag">strong</span>&gt;Bold&lt;/<span class="tag">strong</span>&gt;&lt;/<span class="tag">p</span>&gt;
+  &lt;<span class="tag">p</span>&gt;&lt;<span class="tag">em</span>&gt;Italics&lt;/<span class="tag">em</span>&gt;&lt;/<span class="tag">p</span>&gt;
+  &lt;<span class="tag">p</span>&gt;&lt;<span class="tag">u</span>&gt;Underlined&lt;/<span class="tag">u</span>&gt;&lt;/<span class="tag">p</span>&gt;
+  &lt;<span class="tag">p</span>&gt;&lt;<span class="tag">strike</span>&gt;Striked&lt;/<span class="tag">strike</span>&gt;&lt;/<span class="tag">p</span>&gt;
+ &lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;
+				</code>
+			</pre>
+		</div>
+		<p>The <span class="cde">&lt;<span class="tag">strong</span>></span> tag is <strong>bold</strong>. The <span class="cde">&lt;<span class="tag">em</span>></span> tag is <em>itallics</em> <br>The <span class="cde">&lt;<span class="tag">u</span>&gt;</span> tag is <u>underline</u> and the <span class="cde">&lt;<span class="tag">strike</span>&gt</span> tag is <strike>strike</strike> through.</p>
+		<h3><u>Divs and Spans</u></h3>
+		<div class="cde" style="width:300px; height:100px;margin-left:510px;padding-left:15px;">
+			<pre>
+				<code>
+&lt;<span class="tag">div</span>&gt;
+<span style="font-decoration:itallics;color:green;"> &lt;!--HTML goes here--></span>
+&lt;/<span class="tag">div</span>&gt;
+&lt;<span class="tag">p</span>>This is a &lt;<span class="tag">span</span>&gt;paragraph&lt;/<span class="tag">span</span>&gt;&lt;/<span class="tag">p</span>&gt;
+
+				</code>
+			</pre>
+		</div>
+		<p>Divs and Spans will be very important when you start learning<br> CSS/Javascript and many others.</p>
+		<p>Note: I have also included something that looks like this:
+		<span class="cde" style="color:green;font-decoration:itallics; padding:2px;"><code>&lt;--Text--></code></span><br>That is a comment. The comment is to tell the user what each section is about. <br>It is only shown in the code. If you want to see the code <br> Press <b>Ctrl+U</b> for Windows, for Mac press <b>Cmd+U</b>.</p>
+		<h3><u>Lists</u></h3>
+		<div class="cde" style="height:240px;width:200px;margin-left:560px;padding-left:7px;">
+			<pre>
+				<code>
+<span style="font-decoration:itallics;color:green;">&lt;!--Unordered list--></span>
+&lt;<span class="tag">ul</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 1&lt;/<span class="tag">li</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 2&lt;/<span class="tag">li</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 3&lt;/<span class="tag">li</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 4&lt;/<span class="tag">li</span>&gt;
+&lt;/<span class="tag">ul</span>&gt;
+<span style="font-decoration:itallics;color:green;">&lt;!--Ordered list--></span>
+&lt;<span class="tag">ol</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 1&lt;/<span class="tag">li</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 2&lt;/<span class="tag">li</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 3&lt;/<span class="tag">li</span>&gt;
+ &lt;<span class="tag">li</span>&gt;Item 4&lt;/<span class="tag">li</span>&gt;
+&lt;/<span class="tag">ol</span>&gt;
+				</code>
+			</pre>
+		</div>
+		<p>Unordered lists look like this:</p>
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+		<p>Ordered lists look like this:</p>
+		<ol>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ol>
+		<p>The <span class="cde">&lt;<span class="tag">li</span>></span> tag is a list item. The <span class="cde">&lt;<span class="tag">ul</span>></span> tag is an unordered list and <br>the <span class="cde">&lt;<span class="tag">ol</span>></span> tag is a ordered list. An unordered list is a bulleted list.<br>You can have as much as items as you want in a list. </p>
+		<h3><u>Other text types</u></h3>
+		<div class="cde" style="width:330px;height:220px;margin-left:510px;">
+			<pre><code>
+ &lt;<span class="tag">code</span>&gt;A piece of computer code&lt;/<span class="tag">code</span>&gt;
+ &lt;<span class="tag">pre</span>&gt;Some preformatted text&lt;/<span class="tag">pre</span>&gt;
+ &lt;<span class="tag">i</span>&gt;This text is itallic&lt;/<span class="tag">i</span>&gt;
+ &lt;<span class="tag">var</span>&gt;This is a variable&lt;/<span class="tag">var</span>&gt;
+ &lt;<span class="tag">p</span>&gt;This is &lt;<span class="tag">mark</span>&gt;highlighted&lt;/<span class="tag">mark</span>&gt; text&lt;/<span class="tag">p</span>&gt;
+ &lt;<span class="tag">p</span>&gt;This is &lt;<span class="tag">sup</span>&gt;superscripted&lt;/<span class="tag">sup</span>&gt; text&lt;/<span class="tag">p</span>&gt;
+ &lt;<span class="tag">p</span>&gt;This is &lt;<span class="tag">sub</span>&gt;subscripted&lt;/<span class="tag">sub</span>&gt; text&lt;/<span class="tag">p</span>&gt;
+ &lt;<span class="tag">p</span>&gt;This is a &lt;<span class="tag">q</span>&gt;quote&lt;/<span class="tag">q</span>&gt;&lt;/<span class="tag">p</span>&gt;
+ &lt;<span class="tag">p</span>&gt;Press the &lt;<span class="tag">kbd</span>&gt;Enter&lt;/<span class="tag">kbd</span>&gt; key&lt;/<span class="tag">p</span>&gt;
+ &lt;<span class="tag">p</span>&gt;This is some &lt;<span class="tag">del</span>&gt;deleted&lt;/<span class="tag">del</span>&gt; text&lt;/<span class="tag">p</span>&gt;
+ &lt;<span class="tag">samp</span>&gt;This is sample output&lt;<span class="tag">br</span>&gt;<br> from a computer program&lt;/<span class="tag">samp</span>&gt;
+
+			</code></pre>
+		</div>
+		<p>There are many more other text types such as the <span class="cde">&lt;<span class="tag">small</span>&gt;</span> , <span class="cde">&lt;<span class="tag">time</span>&gt;</span> ,<br> <span class="cde">&lt;<span class="tag">wbr</span>&gt;</span>, and many others.</p>
+		<p>A lot of these tags don't do much. You can check out<br> some of these tags at <a href="https://www.w3schools.com/" target="blank">W3 schools</a> and other web developer websites. <br>There will be a lot more information there.</p>
+		<p>Here are 4 of the above mentioned tags tested down below:</p>
+		<ol>
+			<li>Code: <span class="cde"><code>This is code</code></span></li>
+			<li>Del: <div class="cde" style="width:120px;"><del>This is deleted text</del></div><br></li>
+			<li>Mark: <mark>This is highlighted text</mark><br><br></li>
+			<li>Kbd: <span class="cde"><kbd>Enter</kbd></span></li>
+		</ol>
+		<p>I have styled it up with some CSS but the code should <br> look similar to that when you run it. You obviously won't <br> have the background color or the text color but font should be similar.<br> You can test it out in the <a href="#htmed">Html editor</a>.</p>
+		<hr>
+		<h2 id="htmed"><u>HTML Editor</u></h2>
+		<p>Test your code here!</p>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script src="jquery-linedtextarea.js"></script>
+		<link href="jquery-linedtextarea.css" type="text/css" rel="stylesheet" />
+		<div id="kany">
+			<div class="txt">
+				<textarea name="name" rows="30" cols="65" class="lined" id="htmlcode"></textarea>
+			</div>
+			<div class="ifr">
+				<iframe style="background-color:white;" id="res" width="495px" height="490px"></iframe>
+			</div>
+			<div class="clear" style="background-color:white;width:770px;margin-top:470px;height:20px;margin-left:150px;padding:0;">
+				<button type="button" name="button" id="runButton">Run</button>
+			</div>
+		</div>
+		<div class="cleab">
+			<br>
+			<br>
+			<hr>
+			<br>
+			<a href="#top">Back to top</a>
+			<p>&copy 2017 Sharan Sajiv Menon</p>
+		</div>
+
+		<script type="text/javascript">
+		$(function() {
+			$(".lined").linedtextarea(
+				{selectedLine: 1}
+			);
+		});
+		$("#runButton").click(function(){
+			run();
+		});
+		function run(){
+			$("#res").contents().find("html").html($("#htmlcode").val());
+		}
+		</script>
+	</body>
+</html>

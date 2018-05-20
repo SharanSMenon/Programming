@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About me</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="parallax.css">
+</head>
+
+<body>
+    <div class="Top">
+        <div class="caption">
+            <span class="border">Parallax Scrolling</span>
+        </div>
+    </div>
+    <div class="afterParallax" style="border-bottom: 1px solid black">
+        <h1 style="text-align:center;">Parallax Scrolling</h1>
+        <p style="text-align:center;">This is a webpage with parallax scrolling.</p>
+    </div>
+    <div class="Top" style="background-image:url('file:///C:/sharan/SharanFiles/myIntro/Spinosaurus.jpg')">
+        <div class="caption">
+            <span class="border">Scroll Down</span>
+        </div>
+    </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides">
+            <p>This is a trend in webpage design</p>           
+        </div>
+
+        <div class="mySlides">
+            <p>This text is to enable scrolling</p>
+        </div>
+
+        <div class="mySlides">
+            <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+            <p class="author">- Thomas A. Edison</p>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+
+
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <div class="afterParallax" style="text-align:center;">
+        <h1>Thank you for looking at this demo</h1>
+    </div>
+
+</body>
+<script src="parallax.js"></script>
+
+</html>

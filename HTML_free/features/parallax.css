@@ -1,0 +1,203 @@
+/* article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.Top {
+    position: relative;
+    margin-top: -21px;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Top {
+    background-image: url("file:///C:/sharan/SharanFiles/myIntro/Flowers.jpg");
+    min-height: 100%;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+img {
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    background-color: red;
+    margin-top: -22px;
+}
+
+section {
+    text-align: center;
+    width: 100%;
+    background-color: #eee;
+    margin-top: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    float: left;
+    margin-left: 110px;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.afterParallax {
+    color: #777;
+    background-color: white;
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+    position: relative;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+    position: relative;
+    background: #f1f1f1f1;
+}
+
+/* Slides */
+
+.mySlides {
+    display: none;
+    padding: 80px;
+    text-align: center;
+    animation: fade;
+    animation-duration: 0.5s;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* The dot/bullet/indicator container */
+
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+
+q {
+    font-style: italic;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Add a blue color to the author */
+
+.author {
+    color: cornflowerblue;
+}

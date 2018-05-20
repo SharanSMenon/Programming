@@ -1,0 +1,431 @@
+*{
+    box-sizing: border-box;
+}
+button {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition:0.5s transform;
+}
+button:active{
+    transform: scale(0.9);
+}
+/* Green */
+
+.success {
+    border-color: #4CAF50;
+    color: green;
+}
+
+.success:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+.primary {
+    border-color: blue;
+    color: blue;
+}
+
+.primary:hover {
+    background-color: blue;
+    color: white;
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.mov-bar-cont {
+    width: 100%;
+    height: 30px;
+    background-color: #eee;
+}
+
+.mov-bar {
+    height: 100%;
+    text-align: center;
+    width: 0%;
+    background-color: #333;
+    color: white;
+}
+footer {
+    color: #777;
+    background-color:#eee;
+    text-align: center;
+    padding: 50px 80px;
+    box-sizing: border-box;
+    text-align: justify;
+    position: relative;
+}
+body{
+    margin:0;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Blue */
+
+.info {
+    border-color: #2196F3;
+    color: dodgerblue
+}
+
+.info:hover {
+    background: #2196F3;
+    color: white;
+}
+
+/* Orange */
+
+.warning {
+    border-color: #ff9800;
+    color: orange;
+}
+
+.warning:hover {
+    background: #ff9800;
+    color: white;
+}
+
+/* Red */
+
+.danger {
+    border-color: #f44336;
+    color: red
+}
+
+.danger:hover {
+    background: #f44336;
+    color: white;
+}
+
+/* Gray */
+
+.button {
+    border-color:black;
+    color: black;
+}
+
+button:hover {
+    background-color:black;
+    color:white;
+}
+.demo {
+    border: 5px solid #eee;
+    width: 45%;
+    min-width: 500px;
+    height: 300px;
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.sidenavdemo {
+    width: 130px;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenavdemo a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+}
+pre {
+    background-color: lightgrey;
+    display: inline-block;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
+    counter-reset: line-numbering;
+}
+
+pre .line::before {
+    content: counter(line-numbering);
+    counter-increment: line-numbering;
+    padding-right: 1em;
+    width: 10px;
+    font-size: 10px;
+    color: black;
+    text-align: right;
+    opacity: 0.5;
+}
+
+code {
+    background-color: lightgrey;
+    width:130px;
+}
+.sidenavdemo a:hover {
+    color: #064579;
+}
+.sidenavdemo1 {
+    height: 100%;
+    width: 140px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenavdemo1 a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenavdemo1 a:hover {
+    color: #f1f1f1;
+}
+
+.maindemo {
+    margin-left: 140px;
+    /* Same width as the sidebar + left position in px */
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    overflow: auto;
+    height:100%;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.filter {
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    padding-left:40px;
+}
+input{
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    height:50px;
+    box-sizing: border-box;
+}
+#fltul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#fltul li {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+#fltul li:nth-child(odd) {
+    background-color: #f6f6f6;
+}
+
+#fltul li:hover {
+    background-color: #eee;
+}
+iframe{
+    width: 91%;
+    min-width: 500px;
+    height:300px;
+    border: 5px solid #eee;
+}
+@-webkit-keyframes slideIn {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 100px;
+        opacity: 1
+    }
+}
+#snackbar {
+    color: white;
+    background-color: #333;
+    width: 250px;
+    padding: 12px;
+    transition: 0.5s;
+    position: fixed;
+    bottom: -50px;
+    z-index: 3;
+    opacity: 0;
+    box-shadow: #333 2px 5px 3px;
+    left:20px;
+}
+#snackclose{
+    float:right;
+    font-size:20px;
+    width:20px;
+    height:22px;
+    text-align: center;
+    cursor: pointer;
+}
+#snackclose:hover{
+    background-color: rgba(83, 79, 79, 0.8)
+}
+@keyframes slideIn {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 100px;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes slideOut {
+    from {
+        top: 100px;
+        opacity: 1
+    }
+    to {
+        top: -300px;
+        opacity: 0
+    }
+}
+
+@keyframes slideOut {
+    from {
+        top: 100px;
+        opacity: 1
+    }
+    to {
+        top: -300px;
+        opacity: 0
+    }
+}
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
