@@ -79,7 +79,7 @@ function update(data){
     rectangles.exit()
         .attr("fill","green")
     .transition(t)
-        .attr("cy",y(0))
+        .attr("y",y(0))
         .attr("height",0)
     // Update
     rectangles.transition(t)

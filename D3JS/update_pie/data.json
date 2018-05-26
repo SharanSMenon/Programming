@@ -1,0 +1,22 @@
+[
+    {
+        "name":"Sharan",
+        "storage":917,
+        "RAM":8
+    },
+    {
+        "name":"Sajiv",
+        "storage":512,
+        "RAM":16
+    },
+    {
+        "name":"Anu",
+        "storage":929,
+        "RAM":12
+    },
+    {
+        "name":"Jahnvi",
+        "storage":498,
+        "RAM":4
+    }
+]
