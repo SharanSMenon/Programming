@@ -42,7 +42,7 @@ d3.json("data.json", function (error, data) {
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .attr("fill", "#5D6971")
-        .text("Population)");
+        .text("Population");
 
     g.append("path")
         .datum(data)
@@ -53,15 +53,6 @@ d3.json("data.json", function (error, data) {
         .attr("class", "focus")
         .style("display", "none");
 
-    focus.append("line")
-        .attr("class", "x-hover-line hover-line")
-        .attr("y1", 0)
-        .attr("y2", height);
-
-    focus.append("line")
-        .attr("class", "y-hover-line hover-line")
-        .attr("x1", width)
-        .attr("x2", width);
 
     focus.append("circle")
         .attr("r", 7.5);
@@ -80,6 +71,9 @@ d3.json("data.json", function (error, data) {
         .on("mousemove", mousemove);
 
     function mousemove() {
+        /**
+         * Mousemove function
+         */
         var x0 = x.invert(d3.mouse(this)[0]),
             i = bisectDate(data, x0, 1),
             d0 = data[i - 1],
