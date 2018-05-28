@@ -1,29 +1,7 @@
 #logo {
     height: 50px;
 }
-.row{
-    position: relative;
-    left:-40px;
-    top:-40px;
-    width:calc(100% + 80px);
-}
-.nt-full{
-    max-height: 185px;
-    overflow: auto;
-    height:185px;
-}
-.full{
-    max-height: 400px;
-    overflow: auto;
-    height:400px;
-}
-.active{
-    background-color: #007bff;
-    color:white;
-}
-li:hover{
-    background-color: #eee;
-}
+
 .navbar-brand {
     height: 60px;
     padding: 5px 0px;
@@ -36,19 +14,14 @@ li:hover{
 .axis path,
 .axis line {
     fill: none;
-    stroke-width: 1px;
+    stroke: #D4D8DA;
+    stroke-width: 2px;
     shape-rendering: crispEdges;
 }
 
 .line {
     fill: none;
-    stroke:white;
-    stroke-width: 1px;
-}
-.linee {
-    fill: none;
-    stroke:green;
-    stroke-width: 3px;
+    stroke-width: 2px;
 }
 
 .overlay {
@@ -71,6 +44,12 @@ li:hover{
 #selections .col-md-4 {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.line {
+    fill: none;
+    stroke-width:3px;
+    stroke: gray;
 }
 
 .d3-tip {
@@ -222,8 +201,4 @@ body {
 
 .border-bottom {
     border-bottom: 1px solid #e5e5e5;
-}
-#state-select{
-    position: relative;
-    left:15px;
 }

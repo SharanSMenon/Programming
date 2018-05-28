@@ -11,13 +11,13 @@ LineChart.prototype.initVis = function(){
     var vis = this;
 
     vis.margin = { left:50, right:20, top:50, bottom:20 };
-    vis.height = 500 - vis.margin.top - vis.margin.bottom;
-    vis.width = 550 - vis.margin.left - vis.margin.right;
+    vis.height = 170 - vis.margin.top - vis.margin.bottom;
+    vis.width = $(vis.parentElement).width() - vis.margin.left - vis.margin.right;
 
     vis.svg = d3.select(vis.parentElement)
         .append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
-        .attr("height", 495);
+        .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
     vis.g = vis.svg.append("g")
         .attr("transform", "translate(" + vis.margin.left + 
             ", " + vis.margin.top + ")");
@@ -27,12 +27,12 @@ LineChart.prototype.initVis = function(){
     vis.bisectDate = d3.bisector(function(d) { return d[vis.xv]; }).left;
 
     vis.linePath = vis.g.append("path")
-        .attr("class", "line")
+        .attr("class", "linee")
         .attr("fill", "none")
         .attr("stroke", "grey")
         .attr("stroke-width", "3px");
 
-    vis.g.append("text")
+    vis.title = vis.g.append("text")
         .attr("x", vis.width/2)
         .attr("y", 0)
         .attr("text-anchor", "middle")
@@ -67,7 +67,6 @@ LineChart.prototype.wrangleData = function(_xv,_yv,_label){
     //     return ((d[vis.xv] >= vis.sliderValues[0]) && (d[vis.xv] <= vis.sliderValues[1]))
     // })
     vis.dataFil= vis.data[vis.label]
-    console.log(vis.dataFil)
     vis.updateVis();
 };
 
@@ -96,7 +95,7 @@ LineChart.prototype.updateVis = function(){
     vis.xAxis.transition(vis.t()).call(vis.xAxisCall);
     vis.yAxisCall.scale(vis.y);
     vis.yAxis.transition(vis.t()).call(vis.yAxisCall.tickFormat(formatAbbreviation));
-
+    vis.title.text(vis.label);
     // Discard old tooltip elements
     d3.select(".focus."+vis.label).remove();
     d3.select(".overlay."+vis.label).remove();
@@ -147,7 +146,7 @@ LineChart.prototype.updateVis = function(){
         .x(function(d) { return vis.x(d[vis.xv]); })
         .y(function(d) { return vis.y(d[vis.yv]); });
 
-    vis.g.select(".line")
+    vis.g.select(".linee")
         .transition(vis.t)
         .attr("d", line(vis.dataFil));
 
