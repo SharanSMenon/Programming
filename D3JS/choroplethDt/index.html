@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <style type="text/css">
+        /* On mouse hover, lighten state color */
+
+        path:hover {
+            fill-opacity: .7;
+        }
+
+        /* Style for Custom Tooltip */
+
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            pointer-events: none;
+        }
+
+        /* Northward tooltips */
+
+        .d3-tip.n:after {
+            content: "\25BC";
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+            text-align: center;
+        }
+
+        /* Eastward tooltips */
+
+        .d3-tip.e:after {
+            content: "\25C0";
+            margin: -4px 0 0 0;
+            top: 50%;
+            left: -8px;
+        }
+
+        /* Southward
+tooltips */
+
+        .d3-tip.s:after {
+            content: "\25B2";
+            margin: 0 0 1px 0;
+            top: -8px;
+            left: 0;
+            text-align: center;
+        }
+
+        /* Westward
+tooltips */
+
+        .d3-tip.w:after {
+            content: "\25B6";
+            margin: -4px 0 0 -1px;
+            top: 50%;
+            left: 100%;
+        }
+
+
+        /* Legend Font Style */
+
+        body {
+            font: 11px sans-serif;
+        }
+
+        /* Legend Position Style */
+
+        .legend {
+            position: absolute;
+            left: 800px;
+            top: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <hr>
+    <div id="US"></div>
+    <div id="US2"></div>
+    <script src="js/choropleth_us.js"></script>
+    <script src="js/us_map.js"></script>
+    <script type="text/javascript">
+        d3.csv("data/data.csv", function (data) {
+            var us1 = new ChoroplethUSA(data, "#US", 500, "num");
+            var us2 = new USAMap("#US2", 500);
+        });
+    </script>
+</body>
+
+</html>

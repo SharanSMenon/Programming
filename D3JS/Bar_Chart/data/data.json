@@ -2,21 +2,21 @@
     {
         "name":"Sharan",
         "height":59,
-        "weight":69
+        "IQ":129
     },
     {
         "name":"Sajiv",
         "height":69,
-        "weight":150
+        "IQ":102
     },
     {
         "name":"Anu",
         "height":66,
-        "weight":130
+        "IQ":138
     },
     {
         "name":"Jahnvi",
         "height":47,
-        "weight":65
+        "IQ":95
     }
 ]

@@ -1,0 +1,85 @@
+body {
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.g-hed {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 3px 0;
+}
+
+.g-source-bold {
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.g-source-reg {
+    text-align: left;
+    font-size: 10px;
+}
+
+.g-source {
+    margin: 10px 0;
+}
+
+.g-intro {
+    font-size: 16px;
+    margin: 0px 0px 10px 0px;
+}
+
+.states {
+    fill: #d3d3d3;
+    stroke: #ffffff;
+    stroke-linejoin: round;
+}
+
+.q0-9 {
+    fill: #b7d3f7;
+}
+
+.q1-9 {
+    fill: #5e9ff9;
+}
+
+.q2-9 {
+    fill: #3b7cd6;
+}
+
+.q3-9 {
+    fill: #2160b7;
+}
+
+.q4-9 {
+    fill: #18417a;
+}
+
+.q5-9 {
+    fill: #143056;
+}
+
+.q6-9 {
+    fill: #061223;
+}
+
+.q7-9 {
+    fill: #02152d;
+}
+
+div.tooltip {
+    position: absolute;
+    left: 75px;
+    text-align: center;
+    height: 12px;
+    padding: 8px;
+    font-size: 13px;
+    font-family: 'Proxima-Nova', sans-serif;
+    background: #FFFFFF;
+    border: 1px solid #989898;
+    pointer-events: none;
+}
+path:hover{
+    fill-opacity: 0.7;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- India State Map  -->
+    <title>India Map</title>
+    <!--  Scripts  -->
+    <!-- <script type="text/javascript" src="d3.min.js"></script>
+    <script type="text/javascript" src="d3.geo.min.js"></script> -->
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <!--  Styles  -->
+    <!-- <link type="text/css" rel="stylesheet" href="zcolorbrewer.css"/> -->
+    <style type="text/css">
+        svg {
+            background: #eee;
+        }
+
+        path:hover {
+            fill-opacity: 0.7;
+        }
+
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            pointer-events: none;
+        }
+
+        /* Northward tooltips */
+
+        .d3-tip.n:after {
+            content: "\25BC";
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+            text-align: center;
+        }
+
+        /* Eastward tooltips */
+
+        .d3-tip.e:after {
+            content: "\25C0";
+            margin: -4px 0 0 0;
+            top: 50%;
+            left: -8px;
+        }
+
+        /* Southward
+tooltips */
+
+        body {
+            font: 11px sans-serif;
+        }
+
+        .d3-tip.s:after {
+            content: "\25B2";
+            margin: 0 0 1px 0;
+            top: -8px;
+            left: 0;
+            text-align: center;
+        }
+
+        /* Westward
+tooltips */
+
+        .d3-tip.w:after {
+            content: "\25B6";
+            margin: -4px 0 0 -1px;
+            top: 50%;
+            left: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart"></div>
+    <script type="text/javascript">
+        var w = 600;
+        var h = 600;
+        var proj = d3.geo.mercator()
+            .scale(1000)
+            .translate([-1150, 700]);
+        var path = d3.geo.path().projection(proj);
+        var t = proj.translate(); // the projection's default translation
+        var s = proj.scale() // the projection's default scale
+
+        var map = d3.select("#chart").append("svg")
+            .attr("width", w)
+            .attr("height", h)
+            .call(d3.behavior.zoom().on("zoom", redraw))
+        var color = d3.scale.ordinal()
+            .domain(d3.range(0, 10))
+            .range(d3.schemeCategory10);
+        var india = map.append("g")
+            .attr("id", "india");
+        var tip = d3.tip()
+            .attr("class", "d3-tip")
+            .html(function (d) {
+                return "State: " + d.id
+            })
+        map.call(tip);
+        var states = []
+        var n = 0;
+        var na = []
+        d3.json("states.json", function (json) {
+            india.selectAll("path")
+                .data(json.features)
+                .enter().append("path")
+                .style("color", function (d) {
+                    states.push(d.id)
+                    na.push(n)
+                    n++;
+                })
+                .on("mouseover", tip.show)
+                .style("stroke", "white")
+                .style("stroke-width", 0.7)
+                .on("mouseout", tip.hide)
+                .style("fill", function (d) {
+                    console.log(color(na[states.indexOf(d.id)] % 10))
+                    return color(na[states.indexOf(d.id)] % 10)
+                })
+                .attr("d", path);
+        });
+
+        // /*    
+        // This section should allow for zoom & pan.
+
+        function redraw() {
+            // d3.event.translate stores the current translation from the parent SVG element
+            // t stores the projection's default translation
+            // adding the x and y vales in each array to yields the projection's new translation
+            console.log(d3.event.translate)
+            var tx = t[0] * d3.event.scale + d3.event.translate[0];
+            var ty = t[1] * d3.event.scale + d3.event.translate[1];
+            proj.translate([tx, ty]);
+
+            // determine the projection's new scale and redraw the map:
+            proj.scale(s * d3.event.scale);
+            india.selectAll("path").attr("d", path);
+        }
+
+
+        // This section should color each state.
+
+        // var states = svg.append("g")
+        //     .attr("id", "states")
+        //     .attr("class", "Blues");
+
+        //     // load the GDP data
+        //     d3.json("wealth.json", function(json) {
+        //       data = json;
+        //       states.selectAll("path")
+        //         .attr("class", quantize);
+        //     });
+
+        //     function quantize(d) {
+        //       return "q" + Math.min(8, ~~(data[d.id] * 9 / 12)) + "-9";
+        //     }
+    </script>
+</body>
+
+</html>

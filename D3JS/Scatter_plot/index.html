@@ -7,8 +7,43 @@
     <title>Scatter Plot</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\25BC";
+            position: absolute;
+            text-align: center;
+        }
+
+        /* Style northward tooltips differently */
+
+        .d3-tip.n:after {
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+        }
+    </style>
     <!-- Custom styling -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,11 +59,12 @@
     <!-- Bootstrap grid setup -->
     <div class="container">
         <div class="row">
-            <div id="chart-area"></div>
+            <div id="chart-area" style="width:600px;height:400px;"></div>
         </div>
     </div>
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script src="js/scatter.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

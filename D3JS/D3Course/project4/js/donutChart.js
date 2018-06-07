@@ -52,7 +52,6 @@ DonutChart.prototype.initVis = function(){
 
 DonutChart.prototype.wrangleData = function(){
 	var vis = this;
-
 	sizeNest = d3.nest()
 		.key(function(d){
 			return d.company_size
