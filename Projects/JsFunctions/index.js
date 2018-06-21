@@ -1,6 +1,8 @@
 // Imports
 const lists = require('./functions/lists');
 const numbers = require('./functions/numbers');
+const strings = require('./functions/strings');
+const fibonacci = require('./functions/fibonacci');
 //Tests
 // Lists
 l = [1,2,3,4,5,6,7,8,9,10]

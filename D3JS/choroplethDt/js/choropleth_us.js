@@ -1,4 +1,4 @@
-var ChoroplethUSA = function (data, parentElement, width, val) {
+var ChoroplethUSA = function (data, parentElement, width, val, locations) {
     this.data = data;
     this.parentElement = parentElement;
     this.width = width;
@@ -33,7 +33,6 @@ ChoroplethUSA.prototype.initVis = function () {
     vis.color = d3.scale.threshold()
         .domain(d3.range(0, 10))
         .range(d3.schemeReds[9]);
-    vis.legendText = ["States Lived", "States Visited", "Not visited/lived"];
     vis.svg = d3.select(vis.parentElement)
         .append("svg")
         .attr("width", vis.width)

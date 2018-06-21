@@ -14,7 +14,7 @@ ChoroplethWorld.prototype.initVis = function () {
     vis.values = unpack(vis.data, vis.variable)
     vis.width = 600
     vis.height = (vis.width / 2) + 50;
-    vis.names = unpack(vis.data, "name")
+    vis.names = unpack(vis.data, "COUNTRY")
     vis.colorScheme = d3.schemeReds[9];
     vis.colorScheme.unshift("#eee")
     vis.colorScale = d3.scaleThreshold()

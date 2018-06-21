@@ -24,7 +24,7 @@ def get_place(lat, lon):
     return country
 
 
-df = pandas.read_csv("database.csv");
+df = pandas.read_csv("database.csv")
 rw = df.iloc[0]
 countries = []
 for i in range(0, len(df) - 2):

@@ -1,0 +1,22 @@
+[
+    {
+        "name":"Chrome",
+        "percent":50
+    },
+    {
+        "name":"Opera",
+        "percent":1.7
+    },
+    {
+        "name":"Safari",
+        "percent":8.70
+    },
+    {
+        "name":"IE/Edge",
+        "percent":14.90
+    },
+    {
+        "name":"Firefox",
+        "percent":23.40
+    }
+]

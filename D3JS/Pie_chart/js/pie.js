@@ -4,12 +4,13 @@
  *    FreedomCorp Dashboard
  */
 
-PieChart = function (_parentElement, _yv, _legendArray, _title, _data) {
+PieChart = function (_parentElement, _yv, _legendArray, _title, _data, _xv) {
     this.parentElement = _parentElement;
     this.legendArray = _legendArray;
     this.yv = _yv;
     this.title = _title;
     this.data = _data;
+    this.xv = _xv;
     this.initVis();
 };
 
@@ -37,7 +38,9 @@ PieChart.prototype.initVis = function () {
         .attr("class", "d3-tip")
         .html(function (d) {
             console.log(d);
-            return d.data[vis.yv];
+            var text = vis.xv + ": " + d.data[vis.xv] + "</br>"
+            text += vis.yv + ": " + d.data[vis.yv]
+            return text;
         })
     vis.svg.call(vis.tip)
     vis.pie = d3.pie()
@@ -53,12 +56,12 @@ PieChart.prototype.initVis = function () {
     vis.g.append("text")
         .attr("class", "title")
         .attr("y", -10 - (vis.height / 2))
-        .attr("x", -10)
+        .attr("x",  vis.margin.right -  (vis.width / 2))
         .attr("font-size", "12px")
         .attr("text-anchor", "start")
         .text(vis.title)
 
-    vis.color = d3.scaleOrdinal(["red", "green", "grey", "blue"]);
+    vis.color = d3.scaleOrdinal(d3.schemeCategory10);
 
     vis.addLegend();
     vis.wrangleData(vis.yv);
@@ -98,7 +101,7 @@ PieChart.prototype.updateVis = function () {
         .attr("class", "enter arc")
         .attr("fill", function (d) {
             console.log(d)
-            return vis.color(d.data[vis.yv]);
+            return vis.color(d.data[vis.xv]);
         })
         .on("mouseover", vis.tip.show)
         .on("mouseout", vis.tip.hide)
@@ -126,7 +129,7 @@ PieChart.prototype.addLegend = function () {
     var vis = this;
 
     var legend = vis.g.append("g")
-        .attr("transform", "translate(" + (vis.width - (vis.width / 10) - 30) + ", " + (vis.height / 2 - vis.margin.top - 30) + ")");
+        .attr("transform", "translate(" + (vis.width - (vis.width / 10) - 30) + ", " + (vis.height / 2 - vis.margin.top - 9 * this.legendArray.length) + ")");
 
     var legends = [];
     for (let i = 0; i < vis.legendArray.length; i++) {

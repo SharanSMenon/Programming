@@ -6,10 +6,16 @@ d3.json("data/data.json", function(data) {
         d.value = +d.value;
         numbers.push(d.value)
     })
-    donut = new DonutChart("#chart-area","value",people,"Donut",data)
-    pie = new PieChart("#chart-area2","value",people,"Pie",data);
+    pie = new PieChart("#chart-area2","value",people,"Family Values",data, "name");
+})
+d3.json("data/donut.json", function(data) {
+    var names = []
+    data.forEach(function(d) {
+        d.percent = +d.percent
+        names.push(d.name)
+    })
+    donut = new DonutChart("#chart-area","percent",names,"Browser popularity",data,"name")
 })
 $("#val-select").on("change", function(){
-    donut.wrangleData($("#val-select").val())
     pie.wrangleData($("#val-select").val())
 })

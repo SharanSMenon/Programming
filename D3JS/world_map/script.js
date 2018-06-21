@@ -1,6 +1,6 @@
-var wrld = new WorldMap(600,"#map1")
-d3.csv('data.csv', function(data){
-    var wrld2 = new ChoroplethWorld(600,"#map2",data,[1, 12, 30, 45, 70 ,130, 450, 700, 1000],"Value")
+var wrld = new WorldMap(600, "#map1")
+d3.csv('data.csv', function (data) {
+    var wrld2 = new ChoroplethWorld(600, "#map2", data, [0.6, 4, 19, 90, 600, 1034, 2763, 12000, 20000], "GDP (BILLIONS)")
 });
 // var width = 600,
 //     height = (width / 2) + 50;
