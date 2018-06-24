@@ -1,9 +1,3 @@
-/*
- *    PieChart.js
- *    Mastering Data Visualization with D3.js
- *    FreedomCorp Dashboard
- */
-
 PieChart = function (_parentElement, _yv, _legendArray, _title, _data, _xv) {
     this.parentElement = _parentElement;
     this.legendArray = _legendArray;
@@ -15,7 +9,16 @@ PieChart = function (_parentElement, _yv, _legendArray, _title, _data, _xv) {
 };
 
 PieChart.prototype.initVis = function () {
+    function unpack(key, data) {
+        return data.map(function (d) {
+            return d[key]
+        })
+    }
     var vis = this;
+    vis.yvArray = unpack(vis.yv, vis.data);
+    vis.yvsum = vis.yvArray.reduce(function (a, b) {
+        return a + b
+    })
     vis.margin = {
         left: 40,
         right: 100,
@@ -39,7 +42,7 @@ PieChart.prototype.initVis = function () {
         .html(function (d) {
             console.log(d);
             var text = vis.xv + ": " + d.data[vis.xv] + "</br>"
-            text += vis.yv + ": " + d.data[vis.yv]
+            text += vis.yv + ": " + d.data[vis.yv] + " (" +Math.round((d.data[vis.yv] / vis.yvsum) * 100) + "%)"
             return text;
         })
     vis.svg.call(vis.tip)
@@ -56,7 +59,7 @@ PieChart.prototype.initVis = function () {
     vis.g.append("text")
         .attr("class", "title")
         .attr("y", -10 - (vis.height / 2))
-        .attr("x",  vis.margin.right -  (vis.width / 2))
+        .attr("x", vis.margin.right - (vis.width / 2))
         .attr("font-size", "12px")
         .attr("text-anchor", "start")
         .text(vis.title)

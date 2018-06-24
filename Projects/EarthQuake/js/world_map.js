@@ -62,14 +62,17 @@ WorldMap.prototype.initVis = function () {
 // }
 WorldMap.prototype.update = function () {
     var vis = this;
-    vis.promises = [
-        d3.json("https://cdn.rawgit.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/world-110m.json"),
-        d3.tsv("https://cdn.rawgit.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/world-country-names.tsv")
-    ]
+    d3.queue()
+        .defer(d3.json, "https://cdn.rawgit.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/world-110m.json")
+        .defer(d3.tsv, "https://cdn.rawgit.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/world-country-names.tsv")
+        .await(ready)
     vis.arr = [];
-    Promise.all(vis.promises).then(function (data) {
-        var world = data[0];
-        var names = data[1]
+
+    function ready(error, world, names) {
+        // console.log(data)
+        console.log(names)
+        // var world = data[0];
+        // var names = data[1];
         vis.countries = topojson.feature(world, world.objects.countries).features
         vis.neighbors = topojson.neighbors(world.objects.countries.geometries);
 
@@ -103,5 +106,5 @@ WorldMap.prototype.update = function () {
             }))
             .attr("class", "boundary")
             .attr("d", vis.path);
-    })
+    }
 }
