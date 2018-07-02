@@ -7,7 +7,7 @@ const encrypt = (s, cipher) => {
         var index = alphabet.indexOf(i)
         encrypted_word += cipher[index]
     }
-    return encrypted_word
+    return encrypted_word;
 }
 const decrypt = (s, cipher) => {
     var decrypted_word = "";
@@ -16,5 +16,5 @@ const decrypt = (s, cipher) => {
         var index = cipher.indexOf(i)
         decrypted_word += alphabet[index]
     }
-    return decrypted_word
+    return decrypted_word;
 }
