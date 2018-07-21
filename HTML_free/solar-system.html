@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Planet Loader</title>
+    <style>
+        text {
+            font: italic 40px serif;
+            fill: grey;
+        }
+        body{
+            background: linear-gradient(to right, #20262E, #313338)
+        }
+        svg {
+            background: #20262E;
+            position:absolute;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="400px" height="400px">
+        <circle cx=680 cy=350 r=50 class="sun" fill="yellow">
+        </circle>
+        <path d="M610,350a70,70 0 1,0 140,0a70,70 0 1,0 -140,0" stroke="lightgrey" stroke-width="2" fill="none" id="theMotionPath"></path>
+        <circle cx="" cy="" r=8 class="planet" fill="grey">
+            <animateMotion dur="1.5s" repeatCount="indefinite">
+                <mpath xlink:href="#theMotionPath" />
+            </animateMotion>
+        </circle>
+        <!--Venus-->
+        <path d="M580,350a100,100 0 1,0 200,0a100,100 0 1,0 -200,0" stroke="lightgrey" stroke-width="2" fill="none" id="theMotionPath2"></path>
+        <circle cx="" cy="" r=12 class="planet" fill="#d85b1c">
+            <animateMotion dur="2.5s" repeatCount="indefinite">
+                <mpath xlink:href="#theMotionPath2" />
+            </animateMotion>
+        </circle>
+        <!--Earth-->
+        <path d="M550,350a130,130 0 1,0 260,0a130,130 0 1,0 -260,0" stroke="lightgrey" stroke-width="2" fill="none" id="theMotionPath3"></path>
+        <circle cx="" cy="" r=12 class="planet" fill="#1c41d8">
+            <animateMotion dur="3s" repeatCount="indefinite">
+                <mpath xlink:href="#theMotionPath3" />
+            </animateMotion>
+        </circle>
+        <!-- <text x="100" y="50" a>LOADING...</text> -->
+    </svg>
+</body>
+
+</html>

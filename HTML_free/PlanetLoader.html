@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Planet Loader</title>
+    <style>
+        text {
+            font: italic 40px serif;
+            fill: grey;
+        }
+        body{
+            background: linear-gradient(to right, #20262E, #313338)
+        }
+        svg {
+            background: #20262E;
+            position:absolute;
+            left:35%;
+            top:20%;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="400px" height="400px">
+        <circle cx=200 cy=230 r=50 class="sun" fill="yellow">
+        </circle>
+        <path d="M100,230a100,100 0 1,0 200,0a100,100 0 1,0 -200,0" stroke="lightgrey" stroke-width="2" fill="none" id="theMotionPath"></path>
+        <path d="M60,230a140,140 0 1,0 280,0a140,140 0 1,0 -280,0" stroke="lightgrey" stroke-width="2" fill="none" id="theMotionPath2"></path>
+        <circle cx="" cy="" r=10 class="planet" fill="Brown">
+            <animateMotion dur="2s" repeatCount="indefinite">
+                <mpath xlink:href="#theMotionPath" />
+            </animateMotion>
+        </circle>
+        <circle cx="" cy="" r=15 class="planet" fill="orange">
+            <animateMotion dur="4s" repeatCount="indefinite">
+                <mpath xlink:href="#theMotionPath2" />
+            </animateMotion>
+        </circle>
+        <text x="100" y="50" a>LOADING...</text>
+    </svg>
+</body>
+
+</html>

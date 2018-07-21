@@ -5,5 +5,5 @@ function gcd(a, b) {
     ap = a % b;
     return gcd(b, ap)
 }
-let lcm = (a, b) => parseInt(a * b / gcd(a, b))
+let lcm = (a, b) => Math.floor(a * b / gcd(a, b))
 console.log(lcm(2203,123))

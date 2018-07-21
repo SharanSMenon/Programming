@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+        }
+
+        body {
+            position: relative;
+            direction: ltr;
+            text-align: center;
+            font-family: 'Muli', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            background:linear-gradient(to right, #8e2de2, #4a00e0);
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::-moz-selection {
+            background-color: rgba(0, 0, 0, 0.21);
+            color: #fff;
+        }
+
+        ::selection {
+            background-color: rgba(0, 0, 0, 0.21);
+            color: #fff;
+        }
+
+        ::-moz-selection {
+            background-color: rgba(0, 0, 0, 0.21);
+            color: #fff;
+        }
+
+        #sharan {
+            top: 50%;
+            left: 50%;
+            width: 84px;
+            height: 84px;
+            margin-top: -42px;
+            margin-left: -42px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #sharan,
+        #sharan *,
+        #sharan *:before {
+            display: block;
+            position: absolute;
+        }
+
+        #sharan .ellipse,
+        #sharan .dot {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        #sharan .ellipse {
+            border: 18px solid white;
+            border-radius: 50%;
+        }
+
+        #sharan .dot {
+            -webkit-animation: dotRotate 4.8s linear infinite;
+            animation: dotRotate 4.8s linear infinite;
+        }
+
+        #sharan .dot:before {
+            content: '';
+            top: -42px;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+            border-radius: 50%;
+            background-color: white;
+            -webkit-animation: dotEffect 1.2s ease-in-out infinite;
+            animation: dotEffect 1.2s ease-in-out infinite;
+        }
+
+        @-webkit-keyframes dotEffect {
+            50% {
+                top: 102px;
+            }
+            0%,
+            50%,
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            25% {
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+            }
+            75% {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+        }
+
+        @keyframes dotEffect {
+            50% {
+                top: 102px;
+            }
+            0%,
+            50%,
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+            25% {
+                -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+            }
+            75% {
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+        }
+
+        @-webkit-keyframes dotRotate {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes dotRotate {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        #text {
+            top: 50%;
+            left: 50%;
+            width: 182px;
+            height: 182px;
+            margin-top: -91px;
+            margin-left: -91px;
+        }
+
+        #text,
+        #text>* {
+            display: block;
+            position: absolute;
+            white-space: nowrap;
+            transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        #text .hover,
+        #text .website {
+            top: 100%;
+            left: 50%;
+            letter-spacing: 2px;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.63);
+        }
+
+        #text .website {
+            margin-top: 28px;
+            opacity: 0;
+        }
+
+        #text .sharan,
+        #text .agency {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 182px;
+            letter-spacing: 30px;
+            color: #fff;
+            opacity: 0;
+        }
+
+        #text .sharan {
+            right: 100%;
+            margin-right: -34px;
+        }
+
+        #text .agency {
+            left: 100%;
+        }
+
+        #text:hover .sharan,
+        #text:hover .agency {
+            letter-spacing: 14px;
+            opacity: 1;
+        }
+
+        #text:hover .sharan {
+            margin-right: -18px;
+        }
+
+        #text:hover .hover {
+            margin-top: 28px;
+            opacity: 0;
+        }
+
+        #text:hover .website {
+            margin-top: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sharan">
+        <div class="ellipse"></div>
+        <div class="dot"></div>
+    </div>
+    <a id="text" href="">
+        <div class="hover">
+            <div>Hover</div>
+        </div>
+        <div class="website">Welcome</div>
+        <div class="sharan">Sharan</div>
+        <div class="agency">Company</div>
+    </a>
+    <script></script>
+</body>
+
+</html>

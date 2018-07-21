@@ -1,0 +1,9 @@
+How to upload to github
+1. type "git init" in root directory of project
+2. create .gitignore and ignore any files needed
+3. type in "git add ."
+4. check "git status"
+5. type "git commit -m '<message>'"
+6. Create repository in GitHub or use existing repository
+7. type "git remote add origin <url>"
+8. type " git push -u origin master" 
