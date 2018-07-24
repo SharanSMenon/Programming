@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    body {
+        margin: 15px;
+        background-color: #F1F3F3
+    }
+
+    .bar {
+        fill: #6F257F;
+    }
+    .bar:hover{
+        fill-opacity: 0.7;
+    }
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #D4D8DA;
+        stroke-width: 1px;
+        shape-rendering: crispEdges;
+    }
+
+    .x path {
+        display: none;
+    }
+
+    .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+        pointer-events: none;
+        font-size: 11px;
+        font-family: sans-serif;
+    }
+
+    /* Creates a small triangle extender for the tooltip */
+
+    .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        pointer-events: none;
+    }
+
+    /* Northward tooltips */
+
+    .d3-tip.n:after {
+        content: "\25BC";
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    /* Eastward tooltips */
+
+    .d3-tip.e:after {
+        content: "\25C0";
+        margin: -4px 0 0 0;
+        top: 50%;
+        left: -8px;
+    }
+
+    /* Southward
+tooltips */
+
+    .d3-tip.s:after {
+        content: "\25B2";
+        margin: 0 0 1px 0;
+        top: -8px;
+        left: 0;
+        text-align: center;
+    }
+
+    /* Westward
+tooltips */
+
+    .d3-tip.w:after {
+        content: "\25B6";
+        margin: -4px 0 0 -1px;
+        top: 50%;
+        left: 100%;
+    }
+</style>
+<br>
+<br>
+<svg width="500" height="300"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+<script>
+    var svg = d3.select("svg"),
+        margin = {
+            top: 20,
+            right: 20,
+            bottom: 30,
+            left: 80
+        },
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom;
+
+    var x = d3.scaleLinear().range([0, width]);
+    var y = d3.scaleBand().range([height, 0]);
+
+    var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var tip = d3.tip()
+        .attr("class","d3-tip")
+        .html((d) => {
+            console.log(d)
+            var text = `Area: ${d.area} <br>
+            Value: ${d.value}
+            `
+            return text
+        })
+    svg.call(tip)
+    d3.json("data.json", function (error, data) {
+        if (error) throw error;
+
+        data.sort(function (a, b) {
+            return a.value - b.value;
+        });
+
+        x.domain([0, d3.max(data, function (d) {
+            return d.value;
+        })]);
+        y.domain(data.map(function (d) {
+            return d.area;
+        })).padding(0.1);
+
+        g.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x).ticks(5).tickFormat(function (d) {
+                return parseInt(d / 1000);
+            }).tickSizeInner([-height]));
+
+        g.append("g")
+            .attr("class", "y axis")
+            .call(d3.axisLeft(y));
+
+        g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", 0)
+            .attr("height", y.bandwidth())
+            .attr("y", function (d) {
+                return y(d.area);
+            })
+            .attr("width", function (d) {
+                return x(d.value);
+            })
+            .on("mousemove", tip.show)
+            .on("mouseout", tip.hide);
+    });
+</script>

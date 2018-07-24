@@ -12,10 +12,12 @@ var text_to_binary = (function () {
     };
 }());
 
-function binary_to_text(bin) {
-    return bin.replace(/[01]{8}/g, function (v) {
-        return String.fromCharCode(parseInt(v, 2));
-    });
+function binary_to_text(code) {
+    let s2 = "";
+    for (let i = 0; i <= code.length - 8; i += 8) {
+        s2 += String.fromCharCode(parseInt(code.substring(i, i + 8), 2));
+    }
+    return s2;
 }
 // Testing and User Interface
 console.log("1. Convert text into binary code")
@@ -26,7 +28,7 @@ if (choice == "1") {
     console.log("Result: " + text_to_binary(ip))
 } else if (choice == "2") {
     var ip2 = inp.question('Enter binary code to be converted: ')
-    console.log("Result: " + binary_to_text(ip2));
+    console.log(binary_to_text(ip2));
 } else {
     console.log("Not a valid option");
 

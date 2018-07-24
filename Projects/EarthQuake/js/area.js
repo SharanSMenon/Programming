@@ -1,64 +1,63 @@
-var svg = d3.select("#area"),
-    margin = {
+var areasvg = d3.select("#area"),
+    areamargin = {
         top: 20,
         right: 20,
         bottom: 30,
         left: 40
     }
-width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom
-var parseDate = d3.timeParse("%b %Y");
+areawidth = +areasvg.attr("width") - areamargin.left - areamargin.right,
+    areaheight = +areasvg.attr("height") - areamargin.top - areamargin.bottom
+var areaparseDate = d3.timeParse("%b %Y");
 
-var x = d3.scaleTime().range([0, width]),
-    y = d3.scaleLinear().range([height, 0])
+var areax = d3.scaleTime().range([0, areawidth]),
+    areay = d3.scaleLinear().range([areaheight, 0])
 
-var xAxis = d3.axisBottom(x),
-    yAxis = d3.axisLeft(y);
+var areaxAxis = d3.axisBottom(areax),
+    areayAxis = d3.axisLeft(areay);
 
 var area = d3.area()
     .x(function (d) {
-        return x(d.date);
+        return areax(d.date);
     })
-    .y0(height)
+    .y0(areaheight)
     .y1(function (d) {
-        return y(d.price);
+        return areay(d.price);
     });
-svg.append("defs").append("clipPath")
+areasvg.append("defs").append("clipPath")
     .attr("id", "clip")
     .append("rect")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("areawidth", areawidth)
+    .attr("areaheight", areaheight);
 
-var focus = svg.append("g")
+var areafocus = areasvg.append("g")
     .attr("class", "focus")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + areamargin.left + "," + areamargin.top + ")");
 
 d3.csv("data/area.csv", function (error, dta) {
-    console.log(dta)
     dta.forEach(function (d) {
-        d.date = parseDate(d.date);
+        d.date = areaparseDate(d.date);
         d.price = +d.price;
     })
-    x.domain(d3.extent(dta, function (d) {
+    areax.domain(d3.extent(dta, function (d) {
         return d.date;
     }));
-    y.domain([0, d3.max(dta, function (d) {
+    areay.domain([0, d3.max(dta, function (d) {
         return d.price;
     })]);
 
-    focus.append("path")
+    areafocus.append("path")
         .datum(dta)
         .attr("class", "area")
         .style("fill","steelblue")
         .attr("d", area);
 
-    focus.append("g")
+    areafocus.append("g")
         .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .attr("transform", "translate(0," + areaheight + ")")
+        .call(areaxAxis);
 
-    focus.append("g")
+    areafocus.append("g")
         .attr("class", "axis axis--y")
-        .call(yAxis);
+        .call(areayAxis);
 
 });

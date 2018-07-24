@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binary/ASCII</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Sharan Binary/ASCII converter</h1>
+    <table class="calc" align="center">
+        <tr><td id="ininfo">Enter ASCII text here: </td></tr>
+		<tr>
+			<td><textarea name="bin" rows="8" cols="60" id="intext" placeholder="" tabindex="1" autofocus></textarea></td>
+		</tr>
+		<tr>
+		  	<td>
+				<button type="button" title="Convert" class="btn" tabindex="2" onclick="convert()">Convert</button>
+				<button type="button" title="Swap conversion" class="btn" tabindex="4" onclick="swap()"> Swap</button>
+		  	</td>
+        </tr>
+        <tr><td id="outinfo">Binary output here: </td></tr>
+		<tr>
+			<td><textarea name="txt" rows="8" cols="60" readonly="readonly" id="outtext" placeholder="" tabindex="5"></textarea></td>
+		</tr>
+    </table>
+    <p>If you want to convert ASCII into Hex, <a href="../Hex_HTML/index.html">Click here</a></p>
+    <p>&copy; 2018 Sharan Sajiv Menon</p>
+
+</body>
+<script src="script.js"></script>
+</html>

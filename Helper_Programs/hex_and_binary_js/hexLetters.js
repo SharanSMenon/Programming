@@ -26,8 +26,8 @@ if (choice == "1") {
     var ip = inp.question("Enter text to be converted: ")
     console.log("Result: " + text_to_hex(ip))
 } else if (choice == "2") {
-    var ip2 = inp.question('Enter binary code to be converted: ')
-    console.log("Result: " + hex_to_text(ip2));
+    var ip2 = inp.question('Enter hex code to be converted: ')
+    console.log(hex_to_text(ip2));
 } else {
     console.log("Not a valid option");
 

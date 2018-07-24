@@ -37,7 +37,7 @@ body {
     stroke-width: .5px;
 }
 
-.d3-tip {
+.tip {
     line-height: 1;
     font-weight: bold;
     padding: 12px;
@@ -50,3 +50,6 @@ body {
 }
 
 /* Creates a small triangle extender for the tooltip */
+rect:hover{
+    fill-opacity: 0.7;
+}
