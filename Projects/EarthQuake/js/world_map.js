@@ -81,7 +81,7 @@ WorldMap.prototype.update = function () {
             vis.arr[i.id] = i.name;
         });
         vis.tip = d3.tip()
-            .attr("class", "d3-tip")
+            .attr("class", "tip")
             .html(function (d) {
                 var text = "<strong>Country: </strong>" + vis.arr[d.id]
                 return text;
