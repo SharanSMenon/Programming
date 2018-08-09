@@ -8,56 +8,66 @@
     overflow-x: hidden;
     padding: 8px 0;
 }
-.notification{
-    width:400px;
-    height:80px;
+
+.notification {
+    width: 400px;
+    height: 80px;
     background-color: #333;
-    color:white;
+    color: white;
     position: fixed;
-    padding:5px;
-    bottom:10px;
-    right:-400px;
+    padding: 5px;
+    bottom: 10px;
+    right: -400px;
     z-index: 6;
-    transition:0.5s;
+    transition: 0.5s;
 }
-.notification button{
-    padding:4px;
+
+.notification button {
+    padding: 4px;
     border: none;
     background-color: blue;
-    color:white;
+    color: white;
 }
-.notification button:hover{
-    background-color:rgba(0, 0, 250, 0.4)
+
+.notification button:hover {
+    background-color: rgba(0, 0, 250, 0.4)
 }
-.NotbuttonC{
-    position:absolute;
-    right:10px;
-    bottom:10px;
+
+.NotbuttonC {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
-.notSource{
-    color:#eee;
+
+.notSource {
+    color: #eee;
     font-size: 10px;
-    position:absolute;
-    bottom:10px;
+    position: absolute;
+    bottom: 10px;
 }
-.closeNot{
-    font-size:20px;
-    float:right;
-    font-size:20px;
-    width:20px;
-    height:22px;
+
+.closeNot {
+    font-size: 20px;
+    float: right;
+    font-size: 20px;
+    width: 20px;
+    height: 22px;
     text-align: center;
     cursor: pointer;
 }
-.closeNot:hover{
+
+.closeNot:hover {
     background-color: rgba(83, 79, 79, 0.8);
 }
+
 q {
     font-style: italic;
 }
+
 .author {
     color: cornflowerblue;
 }
+
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -85,16 +95,20 @@ q {
         font-size: 18px;
     }
 }
-br{
+
+br {
     clear: left;
 }
-body{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .container {
     background-color: #f2f2f2;
     padding: 20px;
 }
+
 .contInp[type=text],
 select,
 textarea {
@@ -120,6 +134,7 @@ textarea {
 .contInp[type=submit]:hover {
     background-color: #45a049;
 }
+
 .modal {
     position: fixed;
     width: 100%;
@@ -180,11 +195,13 @@ textarea {
     color: black;
     background-color: #eee;
 }
-.pagination{
+
+.pagination {
     position: relative;
-    height:30px;
+    height: 30px;
     margin-top: 20px;
 }
+
 th,
 tr,
 td {
@@ -219,10 +236,12 @@ table {
     transition: background-color .3s;
     position: relative;
 }
+
 .pagination a.active {
     background-color: #4CAF50;
     color: white;
 }
+
 .pagination a:hover:not(.active) {
     background-color: #ddd;
 }

@@ -1,0 +1,16 @@
+﻿Company,Contract,Quality,Schedule ,Cost_control,Management,Small_business_subcontracting,Regulatory_compliance 
+Conize,contract_1_2015,4,4,3,4,5,4
+Conize,contract_2_2016,5,4,4,3,5,4
+Amer,contract_1_2015,4,4,4,5,4,3
+Amer,contract_2_2016,4,3,3,4,4,3
+Amer,contract_3_2016,4,5,4,3,5,3
+Amer,contract_4_2017,4,3,1,2,3,2
+Genise,contract_1_2017,5,4,5,3,3,3
+Infradeo,contract_1_2016,4,5,4,5,5,3
+Infradeo,contract_2_2016,4,4,5,3,5,5
+Synescent,contract_1_2015,3,4,3,3,3,4
+Synescent,contract_2_2015,3,5,5,4,3,5
+Synescent,contract_3_2015,4,4,3,5,4,5
+Synescent,contract_4_2017,5,4,4,3,4,3
+Synescent,contract_5_2017,3,2,2,3,5,3
+Synescent,contract_6_2017,4,3,4,4,3,3

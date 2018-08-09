@@ -38,7 +38,7 @@ var ylabel = g.append("text")
     .text("Revenue");
 var y = d3.scaleLinear()
     .range([height, 0])
-var x = d3.scaleBand()    
+var x = d3.scaleBand()
     .range([0, width])
     .paddingInner(0.2)
     .paddingOuter(0.2);
@@ -55,17 +55,20 @@ d3.json("revenues.json").then((data) => {
     d3.interval(() => {
         update(data);
         flag = !flag;
-    },1000);
+    }, 1000);
     update(data)
 }).catch((error) => {
     console.log("Error");
     console.log(error);
 });
-function update(data){
+
+function update(data) {
     var value = flag ? "revenue" : "profit";
 
     y.domain([0, d3.max(data, (d) => d[value])])
-    x.domain(data.map(function(d){return d.month}))
+    x.domain(data.map(function (d) {
+        return d.month
+    }))
     var xAxis = d3.axisBottom(x);
     var yAxis = d3.axisLeft(y)
         .tickFormat((d) => {
@@ -77,10 +80,10 @@ function update(data){
     var rectangles = g.selectAll("rect").data(data);
     // EXIT
     rectangles.exit()
-        .attr("fill","green")
+        .attr("fill", "green")
     .transition(t)
-        .attr("y",y(0))
-        .attr("height",0)
+        .attr("y", y(0))
+        .attr("height", 0)
     // Update
     rectangles.transition(t)
         .attr("x", function (d, i) {
@@ -106,9 +109,9 @@ function update(data){
             return "green";
         })
         .attr("yy", y(0))
-    .transition(t)
+        .transition(t)
         .attr("y", (d) => y(d.revenue))
-    var label = flag ? "Revenue":"Profit";
+    var label = flag ? "Revenue" : "Profit";
     ylabel.text(label)
-    
+
 }

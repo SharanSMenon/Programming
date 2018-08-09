@@ -1,25 +1,32 @@
 class stBar {
     constructor(config) {
-        this.domEle = config.element
-        this.stackKey = config.key
-        this.data = config.data
+        this.domEle = config.element;
+        this.stackKey = config.key;
+        this.data = config.data;
         this.margin = {
             top: 20,
             right: 20,
             bottom: 30,
             left: 80
+        };
+        this.width = 670 - this.margin.left - this.margin.right;
+        this.height = 300 - this.margin.top - this.margin.bottom;
+        this.scleFull = {
+            "E":"Excellent",
+            "VG":'Very Good',
+            "S":"Satisfactory",
+            "M":"Marginal",
+            "U":"Unsatisfactory"
         }
-        this.width = 670 - this.margin.left - this.margin.right
-        this.height = 300 - this.margin.top - this.margin.bottom
-        this.initVis()
+        this.initVis();
     }
 
     initVis() {
         var vis = this;
-        vis.xScale = d3.scaleLinear().rangeRound([0, width])
-        vis.yScale = d3.scaleBand().rangeRound([height, 0]).padding(0.1)
-        vis.stBarxAxis = d3.axisBottom(vis.xScale)
-        vis.stBaryAxis = d3.axisLeft(vis.yScale)
+        vis.xScale = d3.scaleLinear().rangeRound([0, vis.width]);
+        vis.yScale = d3.scaleBand().rangeRound([vis.height, 0]).padding(0.1);
+        vis.stBarxAxis = d3.axisBottom(vis.xScale);
+        vis.stBaryAxis = d3.axisLeft(vis.yScale);
         vis.svg = d3.select("#" + vis.domEle).append("svg")
             .attr("width", vis.width + vis.margin.left + vis.margin.right)
             .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
@@ -34,8 +41,8 @@ class stBar {
             .attr("class", "axis axis--y")
             .attr("transform", "translate(0,0)")
             .call(vis.stBaryAxis);
-        vis.render(vis.data)
-        vis.render(vis.data)
+        vis.render(vis.data);
+        vis.render(vis.data);
     }
     render(dt) {
         var vis = this;
@@ -44,10 +51,10 @@ class stBar {
         var stack = d3.stack()
             .keys(vis.stackKey)
             .offset(d3.stackOffsetNone);
-        var color = d3.scaleOrdinal(d3.schemeCategory20)
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
         var layers = stack(dt);
         vis.yScale.domain(dt.map(function (d) {
-            return d.date;
+            return d.company;
         }));
         vis.xScale.domain([0, d3.max(layers[layers.length - 1], function (d) {
             return d.data.total;
@@ -97,13 +104,14 @@ class stBar {
         lyRects
             .enter().append("rect")
             .attr("y", function (d) {
-                return vis.yScale(d.data.date);
+                return vis.yScale(d.data.company);
             })
             .attr("x", function (d) {
                 return vis.xScale(d[0]);
             })
             .attr("height", vis.yScale.bandwidth())
             .attr("width", function (d) {
+                // console.log(d)
                 return vis.xScale(d[1]) - vis.xScale(d[0]);
             })
             .on("mousemove", function (d) {
@@ -117,7 +125,7 @@ class stBar {
                     .style("left", d3.event.pageX - 80 + "px")
                     .style("top", d3.event.pageY - 150 + "px")
                     .style("display", "inline-block")
-                    .html("Date: " + (d.data.date) + "<br>" + "Number of earthquakes: " + (amount) + "<br>" + "Scale: " + (scale) + "<br>" + "Total: " + (d.data.total));
+                    .html("Company: " + (d.data.company) + "<br>" + "Number of ratings: " + (amount) + "<br>" + "Scale: " + (scale) + "<br>" + "Percent: " + (d[1] - d[0]) + "%");
             })
             .on("mouseout", function (d) {
                 stactooltip.style("display", "none");

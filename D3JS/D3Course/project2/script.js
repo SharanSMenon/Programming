@@ -120,7 +120,7 @@ $("#date-slider").slider({
         update(formattedData[time])
     }
 })
-// Play/Pause button.
+//Pause button.
 $("#play-button").on("click",function(){
     var button = $(this);
     if(button.text() == "Play"){

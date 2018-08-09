@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Demos</title>
+</head>
+
+<body>
+    <div class="modal">
+        <div class="modal-content" style="animation-name: slideIn;">
+            <div class="modal-header">
+                <span class="mdlcls" onclick="closeModal()">×</span>
+                <h1>Modal</h1>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel mi sit amet orci consequat suscipit.
+                    Quisque molestie nec nulla sit amet dapibus. Vivamus molestie vehicula sem eget finibus. Pellentesque
+                    eu pretium nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis ex nunc,
+                    vitae ornare justo consectetur ut. Praesent a leo elementum, iaculis tortor vitae, congue purus. Mauris
+                    gravida orci at nibh eleifend pretium. Nam facilisis ipsum vel erat sagittis rutrum. Ut interdum elit
+                    nulla. Nam sit amet eleifend ante. Vivamus ullamcorper elementum nisl, nec fermentum turpis mollis eget.
+                    Donec dignissim nunc ut lectus rhoncus ornare. Nam et ultrices velit. Vestibulum eu felis vel massa elementum
+                    congue. Aenean ante neque, aliquam quis fringilla sed, laoreet id tellus. Vestibulum commodo augue eu
+                    est ullamcorper, vitae dapibus nunc mollis. Quisque vel vehicula odio. Donec ullamcorper dapibus massa,
+                    vel consequat lectus rutrum vel. Donec in nulla cursus, pharetra orci in, pulvinar tellus. In nec condimentum
+                    metus. Phasellus non odio eu mauris rutrum tempus vitae eget lectus. Vivamus sed justo vitae elit luctus
+                    aliquet sed et lacus.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <p>©
+                    <span class="year">2018</span> Sharan Sajiv Menon</p>
+            </div>
+        </div>
+    </div>
+    <button class="success" onclick="openModal()">Open Modal</button>
+    <button class="info" onclick="snaToggle()">Show snackbar</button>
+    <button class="danger" onclick="openNot(0)">Show notification</button>
+    <br>
+    <div id="snackbar">
+        <span id="snackclose" onclick="snaclose();">&times;</span>
+        <span id="snacktext">This is a snackbar</span>
+    </div>
+    <div class="notification" id="0">
+        <span class="closeNot" onclick="closeNot(0)">&times;</span>
+        This is a notification
+        <br>
+        <span class="notSource">Source: Tips</span>
+        <div class="NotbuttonC">
+            <button onclick="closeNot(0)">Dismiss</button>
+            <button>Learn More</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
